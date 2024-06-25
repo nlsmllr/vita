@@ -6,7 +6,7 @@ export const history = [
     period: "2024-present",
     company: "Protofy, Hamburg",
     details: [
-      { text: "Relaunch of the company website using React", link: "https://protofy.com" }
+      { text: "Relaunch of the company website", link: "https://protofy.com" }
     ]
   },
   {
