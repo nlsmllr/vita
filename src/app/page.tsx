@@ -118,7 +118,7 @@ export default function Home() {
         <br />
         <section>
           <h2 className="bullet_point font-bold tracking-wider">KNOWN BUGS</h2>
-          <p className="ml-[50px]">Wrote this in lightmode (...not really)</p>
+          <p className="ml-[50px]">Occasionally outputs puns instead of code - Severity: Critical</p>
         </section>
       </main>
       <br />
