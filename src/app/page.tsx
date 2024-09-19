@@ -25,7 +25,7 @@ export default function Home() {
       <div className="absolute z-10 text-center font-bold text-zinc-800">
         <h1 className="text-5xl">Hello World!</h1>
         {!isVisible && (
-          <button onClick={handleOpen} className="mt-5 rounded-lg bg-green-300 p-3 px-5 text-xl hover:shadow-lg">
+          <button onClick={handleOpen} className="mt-5 rounded-lg bg-zinc-200 p-3 px-5 text-xl hover:shadow-lg">
             Wanna bring me back?
           </button>
         )}

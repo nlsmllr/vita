@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const Imprint = () => {
   return (
-    <div className="text-s h-full bg-black p-6 font-mono leading-5 text-white">
+    <div className="text-s h-full bg-zinc-950 p-6 font-mono leading-5 text-white">
       <nav className="items-center pb-12 text-center font-mono md:flex md:w-[900px] md:flex-row md:justify-between">
         <h1 className="font-thin">
           <Link href="/" className="link">

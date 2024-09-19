@@ -21,6 +21,15 @@ body {
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
+/* globals.css */
+/* body { */
+/* background-image: url('bg.jpg'); Replace with your image path */
+/* background-size: cover; Cover the entire area */
+/* background-position: center; Center the image */
+/* background-repeat: no-repeat; Prevent repeating */
+/* min-height: 100vh; Ensure it covers full height */
+/* } */
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
