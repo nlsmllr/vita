@@ -20,7 +20,7 @@ export const Window = ({
       className={`transform transition-all duration-300 ease-in-out ${isMinimized ? 'translate-y-[70vh] scale-50' : 'translate-y-0 scale-100'} mx-auto max-w-5xl p-5`}
       onClick={isMinimized ? onMinimize : undefined}
     >
-      <div className="h-[60vh] overflow-hidden rounded-xl shadow-xl sm:h-[95vh]">
+      <div className="h-[95vh] overflow-hidden rounded-xl shadow-xl">
         <div className="flex items-center bg-zinc-800 px-4 py-2">
           <div className="flex space-x-2">
             <div className="h-3 w-3 cursor-pointer rounded-full bg-red-500" onClick={onClose}></div>
