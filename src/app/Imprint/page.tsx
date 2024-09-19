@@ -1,48 +1,42 @@
-import Link from 'next/link';
+'use client';
 
-export default function Imprint() {
+import React, { useState } from 'react';
+
+import { Imprint } from '../Components/Imprint';
+import { Window } from '../Components/Window';
+
+export default function Home() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [isMinimized, setIsMinimized] = useState(false);
+
+  const handleClose = () => {
+    setIsVisible(false);
+  };
+  const handleOpen = () => {
+    setIsVisible(true);
+  };
+
+  const handleMinimize = () => {
+    setIsMinimized(!isMinimized);
+  };
+
   return (
-    <div className="text-s bg-black p-6 font-mono leading-5 text-white">
-      <nav className="items-center pb-12 text-center font-mono md:flex md:w-[900px] md:flex-row md:justify-between">
-        <h1 className="font-thin">
-          <Link href="/" className="link">
-            NILS MÜLLER(1)
-          </Link>
-        </h1>
-        <h1 className="font-thin">IMPRINT</h1>
-        <h1 className="font-thin">
-          <Link href="/" className="link">
-            NILS MÜLLER(1)
-          </Link>
-        </h1>
-      </nav>
-      <main className="font-mono md:w-[900px]">
-        <section>
-          <h2 className="bullet_point font-bold tracking-wider">CONTACT</h2>
-          <p className="ml-[50px]">
-            Name: Nils Müller
-            <br />
-            Address: Pastorenstraße 18, 20459 Hamburg
-            <br />
-            E-mail:{' '}
-            <a href="mailto:info@nils-mueller.com" className="link">
-              info@nils-mueller.com
-            </a>
-            <br />
-            Mobile:{' '}
-            <a href="tel:+49 151 15776494" className="link">
-              +49 151 15776494
-            </a>
-          </p>
-        </section>
-      </main>
-      <footer>
-        <h2 className="bullet_point font-bold tracking-wider">
-          <Link href="/" className="link">
-            BACK
-          </Link>
-        </h2>
-      </footer>
+    <div className="relative flex h-screen flex-col items-center justify-center">
+      <div className="absolute z-10 text-center font-bold text-zinc-800">
+        <h1 className="text-5xl">Hello World!</h1>
+        {!isVisible && (
+          <button onClick={handleOpen} className="mt-5 rounded-lg bg-zinc-200 p-3 px-5 text-xl hover:shadow-lg">
+            Wanna bring me back?
+          </button>
+        )}
+      </div>
+      {isVisible && (
+        <div className="z-20">
+          <Window onClose={handleClose} onMinimize={handleMinimize} isMinimized={isMinimized}>
+            <Imprint />
+          </Window>
+        </div>
+      )}
     </div>
   );
 }
