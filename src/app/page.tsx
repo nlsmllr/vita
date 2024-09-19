@@ -21,7 +21,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative flex flex-col justify-center">
+    <div className="relative flex flex-col items-center justify-center">
       <div className="absolute z-10 text-center font-bold text-zinc-800">
         <h1 className="text-5xl">Hello World!</h1>
         {!isVisible && (
