@@ -6,18 +6,18 @@ import { Content } from './Components/Content';
 import { Window } from './Components/Window';
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(true); // State to manage the visibility of the Window
-  const [isMinimized, setIsMinimized] = useState(false); // State to manage whether the Window is minimized
+  const [isVisible, setIsVisible] = useState(true);
+  const [isMinimized, setIsMinimized] = useState(false);
 
   const handleClose = () => {
-    setIsVisible(false); // Function to handle closing the Window
+    setIsVisible(false);
   };
   const handleOpen = () => {
-    setIsVisible(true); // Function to handle closing the Window
+    setIsVisible(true);
   };
 
   const handleMinimize = () => {
-    setIsMinimized(!isMinimized); // Toggle the minimized state
+    setIsMinimized(!isMinimized);
   };
 
   return (
@@ -32,11 +32,7 @@ export default function Home() {
       </div>
       {isVisible && (
         <div className="z-20">
-          <Window
-            onClose={handleClose}
-            onMinimize={handleMinimize}
-            isMinimized={isMinimized} // Pass the minimized state to Window
-          >
+          <Window onClose={handleClose} onMinimize={handleMinimize} isMinimized={isMinimized}>
             <Content />
           </Window>
         </div>
