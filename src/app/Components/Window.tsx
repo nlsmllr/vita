@@ -22,7 +22,7 @@ export const Window = ({
     >
       <div className="h-[83vh] overflow-hidden rounded-xl shadow-xl sm:h-[95vh]">
         <div className="flex items-center bg-zinc-800 px-4 py-2">
-          <div className="flex space-x-2">
+          <div className="flex space-x-2 pr-3 sm:pr-0">
             <div className="h-3 w-3 cursor-pointer rounded-full bg-red-500" onClick={onClose}></div>
             <div className="h-3 w-3 cursor-pointer rounded-full bg-yellow-500" onClick={onMinimize}></div>
             <div className="h-3 w-3 rounded-full bg-green-500"></div>
