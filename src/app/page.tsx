@@ -21,8 +21,9 @@ export default function Home() {
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-center">
-      <div className="absolute z-10 text-center font-bold text-zinc-800">
+    <div className="relative h-screen">
+      {/* Centered Hello World content */}
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center font-bold text-zinc-800">
         <h1 className="text-5xl">Hello World!</h1>
         {!isVisible && (
           <button onClick={handleOpen} className="mt-5 rounded-lg bg-zinc-200 p-3 px-5 text-xl hover:shadow-lg">
@@ -30,8 +31,10 @@ export default function Home() {
           </button>
         )}
       </div>
+
+      {/* Window component not affected by justify-center */}
       {isVisible && (
-        <div className="z-20">
+        <div className="absolute z-20 flex h-full w-full items-start justify-center">
           <Window onClose={handleClose} onMinimize={handleMinimize} isMinimized={isMinimized}>
             <Content />
           </Window>
