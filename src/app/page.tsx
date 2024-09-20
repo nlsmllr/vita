@@ -21,7 +21,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative h-[80vh] sm:h-screen">
+    <div className="relative h-[82vh] sm:h-screen">
       {/* Centered Hello World content */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center font-bold text-zinc-800">
         <h1 className="text-5xl">Hello World!</h1>
