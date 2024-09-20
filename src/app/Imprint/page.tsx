@@ -21,9 +21,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative h-screen overflow-hidden">
-      {' '}
-      {/* Prevent page scrolling */}
+    <div className="relative h-screen">
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center font-bold text-zinc-800">
         <h1 className="text-5xl">Hello World!</h1>
         {!isVisible && (
@@ -35,11 +33,7 @@ export default function Home() {
       {isVisible && (
         <div className="absolute z-20 flex h-full w-full items-start justify-center">
           <Window onClose={handleClose} onMinimize={handleMinimize} isMinimized={isMinimized}>
-            <div className="h-full w-full overflow-auto">
-              {' '}
-              {/* Make only this content scrollable */}
-              <Imprint />
-            </div>
+            <Imprint />
           </Window>
         </div>
       )}
