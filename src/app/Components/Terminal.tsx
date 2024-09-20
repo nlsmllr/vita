@@ -21,7 +21,7 @@ export const Terminal = () => {
         setCommands(prev => [...prev, `> ${input}`, output, 'cv']);
         break;
       case 'help':
-        output = 'Supported commands:\n1. cat cv - Display your CV\n2. clear - Clear the terminal';
+        output = 'Supported commands:\n1. cat cv - Display my CV\n2. clear - Clear the terminal';
         setCommands(prev => [...prev, `> ${input}`, output]);
         break;
       case 'clear':
