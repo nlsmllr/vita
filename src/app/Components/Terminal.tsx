@@ -21,7 +21,11 @@ export const Terminal = () => {
         setCommands(prev => [...prev, `> ${input}`, output, 'cv']);
         break;
       case 'help':
-        output = 'Supported commands:\n1. cat cv - Display my CV\n2. clear - Clear the terminal';
+        output = 'Supported commands:\n1. cat cv - Display my CV\n2. 418 - Try me!\n3. clear - Clear the terminal';
+        setCommands(prev => [...prev, `> ${input}`, output]);
+        break;
+      case '418':
+        output = `I'm a teapot`;
         setCommands(prev => [...prev, `> ${input}`, output]);
         break;
       case 'clear':
@@ -37,7 +41,7 @@ export const Terminal = () => {
 
   return (
     <div className="bg-zinc-950 p-0 font-mono leading-5 text-white">
-      <div className="h-[74vh] w-full overflow-y-auto rounded-lg bg-zinc-950 p-4 font-mono sm:h-[90.5vh]">
+      <div className="h-[74vh] w-full overflow-y-auto rounded-lg bg-zinc-950 p-4 font-mono sm:h-[92vh]">
         {commands.map((line, index) => (
           <pre key={index} className="whitespace-pre-wrap">
             {line === 'cv' ? <Content key={index} /> : line}

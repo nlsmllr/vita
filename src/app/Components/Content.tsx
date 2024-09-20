@@ -122,7 +122,7 @@ export const Content = () => {
         </section>
       </main>
       <br />
-      <footer className="pb-16">
+      <footer className="pb-8">
         <h2 className="bullet_point font-bold tracking-wider">CONTACT</h2>
         <p className="ml-[50px]">
           E-mail:{' '}
