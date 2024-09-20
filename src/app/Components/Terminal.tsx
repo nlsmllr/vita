@@ -6,7 +6,7 @@ import { Content } from './Content';
 
 export const Terminal = () => {
   const [commands, setCommands] = useState<string[]>([
-    "Welcome to Nils' Terminal!",
+    'Welcome to my Terminal!',
     'Type "help" for a list of commands.',
   ]);
   const [input, setInput] = useState<string>('');
@@ -32,13 +32,12 @@ export const Terminal = () => {
         output = `Command not found: ${input}. Type "help" for a list of available commands.`;
         setCommands(prev => [...prev, `> ${input}`, output]);
     }
-
     setInput('');
   };
 
   return (
     <div className="bg-zinc-950 p-0 font-mono leading-5 text-white">
-      <div className="h-[74vh] w-full overflow-y-auto rounded-lg bg-black p-4 font-mono sm:h-[90.5vh]">
+      <div className="h-[74vh] w-full overflow-y-auto rounded-lg bg-zinc-950 p-4 font-mono sm:h-[90.5vh]">
         {commands.map((line, index) => (
           <pre key={index} className="whitespace-pre-wrap">
             {line === 'cv' ? <Content key={index} /> : line}
