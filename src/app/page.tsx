@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-import { Content } from './Components/Content';
+import { Terminal } from './Components/Terminal';
 import { Window } from './Components/Window';
 
 export default function Home() {
@@ -33,7 +33,7 @@ export default function Home() {
       {isVisible && (
         <div className="absolute z-20 flex h-full w-full items-start justify-center">
           <Window onClose={handleClose} onMinimize={handleMinimize} isMinimized={isMinimized}>
-            <Content />
+            <Terminal />
           </Window>
         </div>
       )}

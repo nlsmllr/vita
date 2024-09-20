@@ -8,7 +8,7 @@ import { skills } from '../Constants/skills';
 export const Content = () => {
   return (
     <div className="text-s bg-zinc-950 p-6 font-mono leading-5 text-white">
-      <nav className="items-center pb-12 text-center font-mono sm:flex sm:flex-row sm:justify-between md:w-[900px]">
+      <nav className="items-center pb-12 text-center font-mono sm:flex sm:flex-row sm:justify-between">
         <h1 className="font-thin">
           <Link href="/" className="link">
             NILS MÜLLER(1)
@@ -21,7 +21,7 @@ export const Content = () => {
           </Link>
         </h1>
       </nav>
-      <main className="font-mono md:w-[900px]">
+      <main className="font-mono">
         <section>
           <h2 className="bullet_point font-bold tracking-wider">NAME</h2>
           <p className="ml-[50px]">Nils Müller - Software Engineer</p>
