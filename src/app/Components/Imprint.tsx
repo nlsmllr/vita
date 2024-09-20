@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 export const Imprint = () => {
   return (
-    <div className="text-s h-full bg-zinc-950 p-6 font-mono leading-5 text-white">
-      <nav className="items-center pb-12 text-center font-mono md:flex md:w-[900px] md:flex-row md:justify-between">
+    <div className="text-s h-[74vh] bg-zinc-950 p-4 font-mono leading-5 text-white sm:h-[92vh]">
+      <nav className="items-center pb-12 text-center font-mono sm:flex sm:flex-row sm:justify-between">
         <h1 className="font-thin">
           <Link href="/" className="link">
             NILS MÜLLER(1)
@@ -16,7 +16,7 @@ export const Imprint = () => {
           </Link>
         </h1>
       </nav>
-      <main className="font-mono md:w-[900px]">
+      <main className="font-mono">
         <section>
           <h2 className="bullet_point font-bold tracking-wider">CONTACT</h2>
           <p className="ml-[50px]">

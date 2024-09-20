@@ -7,7 +7,7 @@ import { skills } from '../Constants/skills';
 
 export const Content = () => {
   return (
-    <div className="text-s bg-zinc-950 p-6 font-mono leading-5 text-white">
+    <div className="text-s bg-zinc-950 pt-6 font-mono leading-5 text-white">
       <nav className="items-center pb-12 text-center font-mono sm:flex sm:flex-row sm:justify-between">
         <h1 className="font-thin">
           <Link href="/" className="link">
