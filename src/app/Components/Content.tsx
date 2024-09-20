@@ -126,19 +126,22 @@ export const Content = () => {
         <h2 className="bullet_point font-bold tracking-wider">CONTACT</h2>
         <p className="ml-[50px]">
           E-mail:{' '}
-          <a href="mailto:info@nils-mueller.com" className="link">
+          <Link href="mailto:info@nils-mueller.com" className="link">
             info@nils-mueller.com
-          </a>
+          </Link>
           <br />
           Mobile:{' '}
-          <a href="tel:+4915115776494" className="link">
+          <Link href="tel:+4915115776494" className="link">
             +49 151 15776494
-          </a>
+          </Link>
           <br />
-          LinkedIn:{' '}
-          <a href="https://www.linkedin.com/in/nils-m%C3%BCller-5ab765220/" className="link">
-            Nils Müller
-          </a>
+          <Link href="https://www.linkedin.com/in/nils-m%C3%BCller-5ab765220/" className="link">
+            LinkedIn
+          </Link>
+          <br />
+          <Link href="https://github.com/nlsmllr/" className="link">
+            GitHub
+          </Link>
           <br />
           <Link href="/Imprint" className="link">
             Imprint
