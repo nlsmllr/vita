@@ -15,17 +15,31 @@ export const Terminal = () => {
     e.preventDefault();
     let output = '';
 
-    switch (input.trim().toLowerCase()) {
-      case 'cat cv':
-        output = 'Displaying CV details...';
-        setCommands(prev => [...prev, `> ${input}`, output, 'cv']);
+    // Split the input to separate the command from its arguments
+    const [command, ...args] = input.trim().split(/\s+/);
+    const argumentsString = args.join(' '); // Rejoin the arguments to form the full string after the command
+
+    switch (command.toLowerCase()) {
+      case 'cat':
+        if (argumentsString === 'cv') {
+          output = 'Displaying CV details...';
+          setCommands(prev => [...prev, `> ${input}`, output, 'cv']);
+        } else {
+          output = `File not found: ${argumentsString}`;
+          setCommands(prev => [...prev, `> ${input}`, output]);
+        }
         break;
       case 'help':
-        output = 'Supported commands:\n1. cat cv - Display my CV\n2. 418 - Try me!\n3. clear - Clear the terminal';
+        output =
+          'Supported commands:\n\tcat cv\n\t\tDisplay my CV\n\techo [text]\n\t\tRepeat the text back to you\n\t418\n\t\tTry me!\n\tclear\n\t\tClear the terminal';
         setCommands(prev => [...prev, `> ${input}`, output]);
         break;
       case '418':
         output = `I'm a teapot`;
+        setCommands(prev => [...prev, `> ${input}`, output]);
+        break;
+      case 'echo':
+        output = argumentsString; // Echo back the arguments as output
         setCommands(prev => [...prev, `> ${input}`, output]);
         break;
       case 'clear':
