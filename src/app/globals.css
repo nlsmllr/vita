@@ -18,6 +18,10 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  /* cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="64"><text y="50%" font-size="60">👌</text></svg>')
+      16 16,
+    auto; */
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 

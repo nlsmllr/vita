@@ -42,6 +42,10 @@ export const Terminal = () => {
         output = argumentsString; // Echo back the arguments as output
         setCommands(prev => [...prev, `> ${input}`, output]);
         break;
+      // case 'do not look':
+      //   output = '👌'; // Output the 👌 emoji
+      //   setCommands(prev => [...prev, `> ${input}`, output]);
+      //   break;
       case 'clear':
         setCommands([]);
         setInput('');
@@ -62,13 +66,18 @@ export const Terminal = () => {
           </pre>
         ))}
         <form className="mb-20" onSubmit={handleSubmit}>
-          <label className="flex items-center">
+          <label className="flex items-start">
             <span className="mr-2">$</span>
-            <input
-              type="text"
+            <textarea
               value={input}
               onChange={e => setInput(e.target.value)}
-              className="w-full border-none bg-transparent font-mono outline-none"
+              onKeyDown={e => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault();
+                  handleSubmit(e as unknown as React.FormEvent<HTMLFormElement>);
+                }
+              }}
+              className="h-48 w-full resize-none items-start border-none bg-transparent font-mono outline-none"
               autoFocus
             />
           </label>
