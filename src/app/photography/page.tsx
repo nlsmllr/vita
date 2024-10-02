@@ -70,7 +70,7 @@ export default function Home() {
                 height={500}
                 className="w-full object-cover"
               />
-              <span className="absolute -right-8 top-0 font-mono text-xl text-red-500">0{index + 1}</span>
+              <span className="absolute -right-8 top-0 text-xl text-red-500">0{index + 1}</span>
             </div>
           ))}
         </div>
