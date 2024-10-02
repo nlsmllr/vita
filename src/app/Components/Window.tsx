@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 interface WindowProps {
@@ -33,7 +34,9 @@ export const Window = ({
               className="h-3 w-3 cursor-pointer rounded-full bg-yellow-500 hover:bg-yellow-600"
               onClick={onMinimize}
             ></div>
-            <div className="h-3 w-3 rounded-full bg-green-500 hover:bg-green-600"></div>
+            <Link href={'/'}>
+              <div className="h-3 w-3 rounded-full bg-green-500 hover:bg-green-600"></div>
+            </Link>
           </div>
           <div className="flex-grow text-center">
             <span className="text-sm text-zinc-400">{title}</span>
