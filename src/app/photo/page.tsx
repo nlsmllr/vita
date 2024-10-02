@@ -7,7 +7,7 @@ export default function Photographer() {
         <h1 className="text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>
       </Link>
       <div className="flex flex-col space-x-20 text-4xl font-bold tracking-wide sm:flex-row">
-        <Link className="hover:blur-sm" href={'/'}>
+        <Link className="md:hover:blur-sm" href={'/'}>
           Coming soon 💦
         </Link>
       </div>
