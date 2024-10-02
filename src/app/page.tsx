@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Developer() {
   return (
-    <main className="mx-auto mt-40 flex h-[74vh] flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
+    <main className="mx-auto mt-40 flex h-[65vh] flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
       <Link href={'/'}>
         <h1 className="text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>
       </Link>
