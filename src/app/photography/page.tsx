@@ -39,7 +39,7 @@ export default function Photo() {
   }, [isCursorVisible]);
 
   return (
-    <div className="relative h-[55vh] bg-white text-black sm:h-screen">
+    <div className="relative h-auto bg-white text-black">
       <div
         ref={cursorRef}
         className={`pointer-events-none fixed z-50 h-10 w-10 rounded-full mix-blend-difference transition-opacity ${
@@ -51,7 +51,7 @@ export default function Photo() {
         }}
       />
 
-      <section className="fixed inset-0 z-10 flex h-[77vh] items-center justify-center sm:h-screen">
+      <section className="fixed inset-0 z-10 flex h-screen items-center justify-center">
         <Link
           className="mx-auto flex h-full cursor-none flex-col items-center justify-center uppercase text-black"
           href={'/'}
