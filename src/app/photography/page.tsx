@@ -1,11 +1,20 @@
 'use client';
 
+// import fs from 'fs';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
-export default function Home() {
-  const imageFilenames = ['photo1.jpg', 'photo2.jpg', 'photo3.jpg', 'photo4.jpg', 'photo5.jpg'];
+import { imageFilenames } from '../Constants/photos';
+
+export default function Photo() {
+  // const imageFolder = './images/';
+
+  // fs.readdir(imageFolder, (err, files) => {
+  //   files.forEach(file => {
+  //     console.log(file);
+  //   });
+  // });
 
   const cursorRef = useRef<HTMLDivElement>(null);
   const [isCursorVisible, setIsCursorVisible] = useState(false);
@@ -58,7 +67,7 @@ export default function Home() {
               key={index}
               className="relative col-span-2"
               style={{
-                marginTop: `${Math.random() * 200}px`,
+                marginTop: `${Math.random() * 200 + 50}px`,
                 marginLeft: '-10%',
                 zIndex: imageFilenames.length - index,
               }}
