@@ -66,7 +66,6 @@ export default function Home() {
               <Image
                 src={`/images/${filename}`}
                 alt={`Image ${index + 1}`}
-                layout="responsive"
                 width={500}
                 height={500}
                 className="w-full object-cover"
