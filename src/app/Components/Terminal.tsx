@@ -77,7 +77,7 @@ export const Terminal = () => {
                   handleSubmit(e as unknown as React.FormEvent<HTMLFormElement>);
                 }
               }}
-              className="h-48 w-full resize-none items-start border-none bg-transparent font-mono outline-none"
+              className="touch-action-manipulation h-48 w-full resize-none items-start border-none bg-transparent font-mono text-[16px] outline-none" // Added touch-action and font-size
               autoFocus
             />
           </label>

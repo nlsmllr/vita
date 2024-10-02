@@ -23,32 +23,23 @@ export const Window = ({
       } mx-auto w-full max-w-4xl p-5`}
       style={{
         height: isMinimized ? '25vh' : '100vh',
-        touchAction: 'manipulation', // Added touch-action for mobile handling
       }}
       onClick={isMinimized ? onMinimize : undefined}
     >
       <div className="overflow-hidden rounded-lg shadow-xl sm:h-full">
         <div className="flex items-center rounded-t-lg bg-zinc-800 px-4 py-2">
           <div className="flex space-x-2 pr-3 sm:pr-0">
-            <div
-              className="h-3 w-3 cursor-pointer rounded-full bg-red-500 hover:bg-red-600"
-              onClick={onClose}
-              style={{ touchAction: 'manipulation' }} // Added touch-action for buttons
-            ></div>
+            <div className="h-3 w-3 cursor-pointer rounded-full bg-red-500 hover:bg-red-600" onClick={onClose}></div>
             <div
               className="h-3 w-3 cursor-pointer rounded-full bg-yellow-500 hover:bg-yellow-600"
               onClick={onMinimize}
-              style={{ touchAction: 'manipulation' }} // Added touch-action for buttons
             ></div>
             <Link href={'/'}>
-              <div
-                className="h-3 w-3 rounded-full bg-green-500 hover:bg-green-600"
-                style={{ touchAction: 'manipulation' }} // Added touch-action for buttons
-              ></div>
+              <div className="h-3 w-3 rounded-full bg-green-500 hover:bg-green-600"></div>
             </Link>
           </div>
           <div className="flex-grow text-center">
-            <span className="text-sm text-zinc-400">{title}</span>{' '}
+            <span className="text-sm text-zinc-400">{title}</span>
           </div>
         </div>
         <div className="h-full overflow-auto rounded-b-lg font-mono text-sm text-gray-300">{children}</div>
