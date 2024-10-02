@@ -39,7 +39,7 @@ export default function Photo() {
   }, [isCursorVisible]);
 
   return (
-    <div className="relative h-screen bg-white text-black">
+    <div className="relative h-auto bg-white text-black sm:h-screen">
       <div
         ref={cursorRef}
         className={`pointer-events-none fixed z-50 h-10 w-10 rounded-full mix-blend-difference transition-opacity ${
