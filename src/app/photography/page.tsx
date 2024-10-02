@@ -58,7 +58,7 @@ export default function Home() {
               key={index}
               className="relative col-span-2"
               style={{
-                marginTop: `${Math.random() * 300 + 50}px`,
+                marginTop: `${Math.random() * 200}px`,
                 marginLeft: '-10%',
                 zIndex: imageFilenames.length - index,
               }}
