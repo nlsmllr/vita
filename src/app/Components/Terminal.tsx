@@ -58,7 +58,7 @@ export const Terminal = () => {
   };
 
   return (
-    <div className="touch-none bg-zinc-950 p-0 font-mono leading-5 text-white">
+    <div className="bg-zinc-950 p-0 font-mono leading-5 text-white">
       <div className="h-[74vh] w-full overflow-y-auto rounded-lg bg-zinc-950 p-4 font-mono sm:h-[100vh]">
         {commands.map((line, index) => (
           <pre key={index} className="whitespace-pre-wrap">
@@ -77,7 +77,7 @@ export const Terminal = () => {
                   handleSubmit(e as unknown as React.FormEvent<HTMLFormElement>);
                 }
               }}
-              className="h-48 w-full touch-none resize-none items-start border-none bg-transparent font-mono outline-none"
+              className="h-48 w-full resize-none items-start border-none bg-transparent font-mono outline-none"
               autoFocus
             />
           </label>
