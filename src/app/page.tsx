@@ -14,8 +14,8 @@ export default function Developer() {
       }
 
       if (cursorRef.current) {
-        cursorRef.current.style.left = `${event.pageX - 20}px`;
-        cursorRef.current.style.top = `${event.pageY - 20}px`;
+        cursorRef.current.style.left = `${event.clientX - 20}px`;
+        cursorRef.current.style.top = `${event.clientY - 20}px`;
       }
     };
 
