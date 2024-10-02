@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className="touch-manipulation" lang="en">
       <body className={inter.className}>{children}</body>
     </html>
   );

@@ -26,7 +26,7 @@ export const Window = ({
       }}
       onClick={isMinimized ? onMinimize : undefined}
     >
-      <div className="touch-manipulation overflow-hidden rounded-lg shadow-xl sm:h-full">
+      <div className="overflow-hidden rounded-lg shadow-xl sm:h-full">
         <div className="flex items-center rounded-t-lg bg-zinc-800 px-4 py-2">
           <div className="flex space-x-2 pr-3 sm:pr-0">
             <div className="h-3 w-3 cursor-pointer rounded-full bg-red-500 hover:bg-red-600" onClick={onClose}></div>
