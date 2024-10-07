@@ -42,10 +42,6 @@ export const Terminal = () => {
         output = argumentsString; // Echo back the arguments as output
         setCommands(prev => [...prev, `> ${input}`, output]);
         break;
-      // case 'do not look':
-      //   output = '👌'; // Output the 👌 emoji
-      //   setCommands(prev => [...prev, `> ${input}`, output]);
-      //   break;
       case 'clear':
         setCommands([]);
         setInput('');
@@ -59,7 +55,7 @@ export const Terminal = () => {
 
   return (
     <div className="bg-zinc-950 p-0 font-mono leading-5 text-white">
-      <div className="h-[74vh] w-full overflow-y-auto rounded-lg bg-zinc-950 p-4 font-mono sm:h-[100vh]">
+      <div className="scrollbar-hide h-[74vh] w-full overflow-y-auto rounded-lg bg-zinc-950 p-4 font-mono sm:h-[100vh]">
         {commands.map((line, index) => (
           <pre key={index} className="whitespace-pre-wrap">
             {line === 'cv' ? <Content key={index} /> : line}

@@ -42,7 +42,9 @@ export const Window = ({
             <span className="text-sm text-zinc-400">{title}</span>
           </div>
         </div>
-        <div className="h-full overflow-auto rounded-b-lg font-mono text-sm text-gray-300">{children}</div>
+        <div className="scrollbar-hide h-full overflow-auto rounded-b-lg font-mono text-sm text-gray-300">
+          {children}
+        </div>
       </div>
     </div>
   );
