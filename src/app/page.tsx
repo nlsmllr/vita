@@ -38,7 +38,6 @@ export default function Developer() {
           mixBlendMode: 'difference',
         }}
       />
-
       <Link className="cursor-none" href={'/'}>
         <h1 className="text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>
       </Link>
