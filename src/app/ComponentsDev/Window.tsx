@@ -34,7 +34,7 @@ export const Window = ({
               className="h-3 w-3 cursor-pointer rounded-full bg-yellow-500 hover:bg-yellow-600"
               onClick={onMinimize}
             ></div>
-            <Link href={'/'}>
+            <Link href={'/contact'}>
               <div className="h-3 w-3 rounded-full bg-green-500 hover:bg-green-600"></div>
             </Link>
           </div>

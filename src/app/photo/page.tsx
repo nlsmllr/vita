@@ -1,43 +1,14 @@
-'use client';
-
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+
+import CustomCursor from '../ComponentsPhoto/CustomCursor';
 
 export default function Photographer() {
-  const cursorRef = useRef<HTMLDivElement>(null);
-  const [isCursorVisible, setIsCursorVisible] = useState(false);
-
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      if (!isCursorVisible) {
-        setIsCursorVisible(true);
-      }
-
-      if (cursorRef.current) {
-        cursorRef.current.style.left = `${event.pageX - 20}px`;
-        cursorRef.current.style.top = `${event.pageY - 20}px`;
-      }
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, [isCursorVisible]);
-
   return (
     <main className="mx-auto mt-72 flex h-auto cursor-none flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
-      <div
-        ref={cursorRef}
-        className={`pointer-events-none fixed z-50 h-10 w-10 rounded-full border border-black mix-blend-difference transition-opacity ${
-          isCursorVisible ? 'opacity-100' : 'opacity-0'
-        }`}
-        style={{
-          background: 'white',
-          mixBlendMode: 'difference',
-        }}
-      />
+      <CustomCursor />
+      <Link href={'/contact'} className="cursor-none">
+        <div className="fixed right-5 top-5 h-10 w-10 animate-pulse rounded-full bg-red-500 md:h-5 md:w-5" />
+      </Link>
 
       <Link className="cursor-none" href={'/'}>
         <h1 className="text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>

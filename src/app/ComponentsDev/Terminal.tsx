@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
 import { Content } from './Content';
@@ -10,6 +11,7 @@ export const Terminal = () => {
     'Type "help" for a list of commands.',
   ]);
   const [input, setInput] = useState<string>('');
+  const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -31,7 +33,7 @@ export const Terminal = () => {
         break;
       case 'help':
         output =
-          'Supported commands:\n\tcat cv\n\t\tDisplay my CV\n\techo [text]\n\t\tRepeat the text back to you\n\t418\n\t\tTry me!\n\tclear\n\t\tClear the terminal';
+          'Supported commands:\n\tcat cv\n\t\tDisplay my CV\n\techo [text]\n\t\tRepeat the text back to you\n\t418\n\t\tTry me!\n\tclear\n\t\tClear the terminal\n\texit\n\t\tReturn to the landing page';
         setCommands(prev => [...prev, `> ${input}`, output]);
         break;
       case '418':
@@ -45,6 +47,9 @@ export const Terminal = () => {
       case 'clear':
         setCommands([]);
         setInput('');
+        return;
+      case 'exit':
+        router.push('/');
         return;
       default:
         output = `Command not found: ${input}. Type "help" for a list of available commands.`;
