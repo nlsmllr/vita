@@ -67,7 +67,8 @@ export default function Photo() {
               key={index}
               className="relative col-span-2"
               style={{
-                marginTop: `${Math.random() * 200 + 50}px`,
+                marginTop:
+                  index % 2 === 0 ? `max(20px, ${Math.random() * 200}px)` : `max(50px, ${Math.random() * 200 + 50}px)`,
                 marginLeft: '-10%',
                 zIndex: imageFilenames.length - index,
               }}
