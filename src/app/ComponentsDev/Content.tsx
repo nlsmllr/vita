@@ -37,7 +37,7 @@ export const Content = () => {
         <section>
           <h2 className="bullet_point font-bold tracking-wider">DESCRIPTION</h2>
           <p className="ml-[50px]">
-            <span className="font-black">nils</span> is a 7th semester student at Fachhochschule Wedel and currently
+            <span className="font-black">nils</span> is an 8th semester student at Fachhochschule Wedel and currently
             employed as a frontend developer at Protofy in Hamburg, Germany.
           </p>
         </section>
