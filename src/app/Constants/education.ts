@@ -3,7 +3,12 @@ export const education = [
     degree: 'Bachelor of Science in Medieninformatik',
     year: '2025',
     institution: 'Fachhochschule, Wedel',
-    details: ['Various programming languages and concepts such as OOP', 'Web and GUI development', 'Databases'],
+    details: [
+      'Various programming languages and concepts such as OOP',
+      'Web and GUI development',
+      'Databases',
+      'VR development',
+    ],
   },
   {
     degree: 'Bachelor of Arts in Photography',
