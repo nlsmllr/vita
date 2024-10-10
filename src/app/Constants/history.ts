@@ -5,7 +5,10 @@ export const history = [
     role: 'Working student frontend engineering',
     period: '2024-present',
     company: 'Protofy, Hamburg',
-    details: [{ text: 'Relaunch of the company website', link: 'https://protofy.com' }],
+    details: [
+      { text: 'Relaunch of the company website', link: 'https://protofy.com' },
+      { text: 'Creation of a web portal for Gebrueder Heinemann' },
+    ],
   },
   {
     role: 'Working student data & cloud engineering',

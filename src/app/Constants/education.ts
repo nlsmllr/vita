@@ -4,9 +4,10 @@ export const education = [
     year: '2025',
     institution: 'Fachhochschule, Wedel',
     details: [
-      'Various programming languages and concepts such as OOP',
-      'Web and GUI development',
+      'Various programming languages and concepts such as object-oriented, procedural and functional programming',
       'Databases',
+      'Web development',
+      'App development',
       'VR development',
     ],
   },
