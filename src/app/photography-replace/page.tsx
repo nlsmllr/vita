@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { ContactButton } from '../ComponentsPhoto/ContactButton';
 import CustomCursor from '../ComponentsPhoto/CustomCursor';
 import { imageFilenames } from '../Constants/photos';
 
@@ -8,9 +9,7 @@ export default function Photo() {
   return (
     <div className="relative h-auto cursor-none bg-white text-black">
       <CustomCursor />
-      <Link href={'/contact'} className="cursor-none">
-        <div className="fixed right-5 top-5 z-30 h-10 w-10 animate-pulse rounded-full bg-red-500 md:h-5 md:w-5" />
-      </Link>
+      <ContactButton link={'contact'} contact={true} />
       <section className="fixed inset-0 z-10 flex h-screen items-center justify-center">
         <Link
           className="mx-auto flex h-full cursor-none flex-col items-center justify-center uppercase text-black"

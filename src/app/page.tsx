@@ -1,14 +1,13 @@
 import Link from 'next/link';
 
+import { ContactButton } from './ComponentsPhoto/ContactButton';
 import CustomCursor from './ComponentsPhoto/CustomCursor';
 
 export default function Developer() {
   return (
     <main className="mx-auto mt-72 flex h-auto cursor-none flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
       <CustomCursor />
-      <Link href={'/contact'} className="cursor-none">
-        <div className="fixed right-5 top-5 h-10 w-10 animate-pulse rounded-full bg-red-500 md:h-5 md:w-5" />
-      </Link>
+      <ContactButton link={'contact'} contact={true} />
       <Link className="cursor-none" href={'/'}>
         <h1 className="text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>
       </Link>
