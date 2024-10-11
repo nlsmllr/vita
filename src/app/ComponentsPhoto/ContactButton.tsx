@@ -6,7 +6,7 @@ interface ContactButtonProps {
 
 export const ContactButton: React.FC<ContactButtonProps> = ({ link }) => (
   <Link href={`/${link}`} className="cursor-none">
-    <div className="fixed right-5 top-5 z-30 flex h-5 w-5 animate-pulse items-center justify-center rounded-full bg-red-500">
+    <div className="fixed right-5 top-5 z-30 flex h-5 w-5 animate-none items-center justify-center rounded-full bg-red-500 transition duration-200 hover:blur-sm">
       {/* <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24px"
