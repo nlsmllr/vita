@@ -5,6 +5,8 @@ import { ContactButton } from '../ComponentsPhoto/ContactButton';
 import CustomCursor from '../ComponentsPhoto/CustomCursor';
 import { imageFilenames } from '../Constants/photos';
 
+export const dynamic = 'force-dynamic';
+
 export default function Photo() {
   return (
     <div className="relative h-auto cursor-none bg-white text-black">
@@ -35,9 +37,9 @@ export default function Photo() {
               <Image
                 src={`/images/${filename}`}
                 alt={`Image ${index + 1}`}
-                width={500}
-                height={500}
-                className="w-full object-cover transition md:duration-200 md:hover:invert"
+                width={2500}
+                height={2500}
+                className="w-full object-cover transition md:duration-200"
               />
               <span className="absolute -right-8 top-0 text-xl text-red-500">{String(index + 1).padStart(2, '0')}</span>
             </div>
