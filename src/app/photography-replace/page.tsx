@@ -12,6 +12,9 @@ export default function Photo() {
     <div className="relative h-auto cursor-none bg-white text-black">
       <CustomCursor />
       <ContactButton link={'contact'} />
+      <div className="flex h-[75vh] w-screen items-end justify-center">
+        <div className="text-md font-light uppercase tracking-widest text-zinc-950">scroll down</div>
+      </div>
       <section className="fixed inset-0 z-10 flex h-screen items-center justify-center">
         <Link
           className="mx-auto flex h-full cursor-none flex-col items-center justify-center uppercase text-black"
@@ -20,7 +23,6 @@ export default function Photo() {
           <h1 className="-mt-10 text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>
         </Link>
       </section>
-
       <section className="relative z-20 mt-[1000px] cursor-none sm:mx-40">
         <div className="grid grid-cols-1 gap-4 px-12 sm:p-4 md:grid-cols-4">
           {imageFilenames.map((filename, index) => (
