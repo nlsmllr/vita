@@ -13,8 +13,14 @@ export default function Photo() {
       <CustomCursor />
       <ContactButton link={'contact'} />
       <div className="flex h-[75vh] w-screen items-end justify-center">
-        <div className="text-md font-light uppercase tracking-widest text-zinc-950">scroll down</div>
+        <div className="text-md z-10 font-light uppercase tracking-widest text-zinc-950">scroll down</div>
       </div>
+      <div
+        className="fixed left-0 top-0 z-10 h-[74vh] w-full"
+        style={{
+          backgroundImage: 'linear-gradient(to bottom, white, white 74%, transparent 100%)',
+        }}
+      ></div>
       <section className="fixed inset-0 z-10 flex h-screen items-center justify-center">
         <Link
           className="mx-auto flex h-full cursor-none flex-col items-center justify-center uppercase text-black"
