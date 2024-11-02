@@ -15,17 +15,15 @@
     --background-end-rgb: 255, 255, 255;
   }
 }
-
-/* Hide scrollbar globally */
 html,
 body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  overscroll-behavior: none;
 }
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 body {
