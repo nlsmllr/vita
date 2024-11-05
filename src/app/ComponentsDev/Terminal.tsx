@@ -79,7 +79,7 @@ export const Terminal = () => {
                 }
               }}
               className="h-48 w-full resize-none items-start border-none bg-transparent font-mono outline-none"
-              autoFocus
+              // autoFocus
             />
           </label>
         </form>
