@@ -38,7 +38,7 @@ export const Imprint = () => {
       </main>
       <footer>
         <h2 className="bullet_point font-bold tracking-wider">
-          <Link href="/" className="link">
+          <Link href="/dev" className="link">
             BACK
           </Link>
         </h2>

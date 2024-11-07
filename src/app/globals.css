@@ -15,17 +15,15 @@
     --background-end-rgb: 255, 255, 255;
   }
 }
-
-/* Hide scrollbar globally */
 html,
 body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  overscroll-behavior: none;
 }
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 body {
@@ -59,5 +57,32 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+.dotPulse {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 0 0 #ef444442;
+  animation: l2 1.5s infinite linear;
+  position: relative;
+}
+.dotPulse:before,
+.dotPulse:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 #ef444442;
+  animation: inherit;
+  animation-delay: -0.5s;
+}
+.dotPulse:after {
+  animation-delay: -1s;
+}
+@keyframes l2 {
+  100% {
+    box-shadow: 0 0 0 40px #0000;
   }
 }

@@ -8,7 +8,7 @@ import { Content } from './Content';
 export const Terminal = () => {
   const [commands, setCommands] = useState<string[]>([
     'Welcome to my Terminal!',
-    'Type "help" for a list of commands.',
+    'Type "help" for a list of commands or "exit" to go back.',
   ]);
   const [input, setInput] = useState<string>('');
   const router = useRouter();
@@ -60,7 +60,7 @@ export const Terminal = () => {
 
   return (
     <div className="p-0 font-mono leading-5 text-white">
-      <div className="scrollbar-hide h-[74vh] w-full overflow-y-auto rounded-lg p-4 font-mono sm:h-full">
+      <div className="scrollbar-hide h-[69vh] w-full overflow-y-auto rounded-lg p-4 font-mono sm:h-full">
         {commands.map((line, index) => (
           <pre key={index} className="whitespace-pre-wrap">
             {line === 'cv' ? <Content key={index} /> : line}
@@ -79,7 +79,7 @@ export const Terminal = () => {
                 }
               }}
               className="h-48 w-full resize-none items-start border-none bg-transparent font-mono outline-none"
-              autoFocus
+              // autoFocus
             />
           </label>
         </form>
