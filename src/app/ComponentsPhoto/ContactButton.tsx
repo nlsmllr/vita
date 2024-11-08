@@ -23,7 +23,7 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ link, visible }) =
       </Link>
 
       {showLabel && visible && (
-        <div className="fadeInLabel sm:right-22 absolute right-16 top-32 flex -translate-y-1/2 transform items-center">
+        <div className="fadeInLabel sm:right-22 absolute right-16 top-28 flex -translate-y-1/2 transform items-center sm:top-32">
           <span className="-mr-5 pt-16 text-xl font-black tracking-wide text-black sm:-mr-4">Get in Touch</span>
           <svg className="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3" width="200" height="150">
             <g data-name="Layer_1">

@@ -11,7 +11,7 @@ export default function Photo() {
   return (
     <div className="relative h-auto cursor-none bg-white pb-10 text-black">
       <CustomCursor />
-      <ContactButton link={'contact'} visible={true} />
+      <ContactButton link={'contact'} visible={false} />
       <div className="flex h-[75vh] w-screen items-end justify-center">
         <div className="text-md z-10 font-light uppercase tracking-widest text-zinc-950">scroll down</div>
       </div>
