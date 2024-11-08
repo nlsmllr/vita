@@ -46,7 +46,9 @@ export default function Photo() {
                 height={2500}
                 className="w-full object-cover transition md:duration-200"
               />
-              <span className="absolute -right-8 top-0 text-xl text-red-500">{String(index + 1).padStart(2, '0')}</span>
+              <span className="absolute -right-8 top-0 text-xl text-[#ff0080]">
+                {String(index + 1).padStart(2, '0')}
+              </span>
             </div>
           ))}
         </div>

@@ -45,15 +45,6 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
-/* globals.css */
-/* body { */
-/* background-image: url('bg.jpg'); Replace with your image path */
-/* background-size: cover; Cover the entire area */
-/* background-position: center; Center the image */
-/* background-repeat: no-repeat; Prevent repeating */
-/* min-height: 100vh; Ensure it covers full height */
-/* } */
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -63,8 +54,8 @@ body {
 .dotPulse {
   aspect-ratio: 1;
   border-radius: 50%;
-  background: #ef4444;
-  box-shadow: 0 0 0 0 #ef444442;
+  background: #ff0080;
+  box-shadow: 0 0 0 0 #ff00804b;
   animation: l2 1.5s infinite linear;
   position: relative;
 }
@@ -74,7 +65,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: 0 0 0 0 #ef444442;
+  box-shadow: 0 0 0 0 #ff00804b;
   animation: inherit;
   animation-delay: -0.5s;
 }
