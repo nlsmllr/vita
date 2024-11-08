@@ -77,3 +77,25 @@ body {
     box-shadow: 0 0 0 40px #0000;
   }
 }
+
+/* Fade-in and fade-out animation */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Label styling */
+.fadeInLabel {
+  opacity: 0;
+  animation: fadeInOut 3s ease-in-out forwards; /* Adjust duration as needed */
+}
