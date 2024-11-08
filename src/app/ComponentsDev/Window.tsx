@@ -18,7 +18,7 @@ export const Window = ({
 }: WindowProps) => {
   return (
     <div
-      className={`transform transition-all duration-300 ease-in-out ${
+      className={`transform cursor-auto transition-all duration-300 ease-in-out ${
         isMinimized ? 'translate-y-[75vh] scale-50' : 'translate-y-0 scale-100'
       } mx-auto w-full max-w-4xl p-5`}
       style={{

@@ -35,7 +35,7 @@ export default function Home() {
   }, [colorChange]);
 
   return (
-    <main className="mx-auto mt-72 flex h-auto w-screen cursor-none flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
+    <main className="mx-auto mt-72 flex h-auto cursor-none flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
       <CustomCursor />
       <ContactButton link={'contact'} visible={true} />
       <Link className="cursor-none" href={'/'}>
@@ -44,7 +44,7 @@ export default function Home() {
       <div className="my-7 flex cursor-none flex-col space-x-[69px] text-3xl font-bold tracking-wide sm:my-0 sm:flex-row sm:text-4xl">
         <Link
           className={`cursor-none md:blur-sm md:transition-all md:duration-300 md:hover:blur-0 ${
-            colorChange ? 'text-[#ff0080] blur-sm duration-100 md:blur-0' : 'text-black blur-0 duration-100 md:blur-sm'
+            colorChange ? 'text-[#ff0080] duration-100 md:blur-0' : 'text-black duration-100 md:blur-sm'
           }`}
           href={'/dev'}
         >
@@ -52,7 +52,7 @@ export default function Home() {
         </Link>
         <Link
           className={`cursor-none md:blur-sm md:transition-all md:duration-300 md:hover:blur-0 ${
-            colorChange ? 'text-[#ff0080] blur-sm duration-100 md:blur-0' : 'text-black blur-0 duration-100 md:blur-sm'
+            colorChange ? 'text-[#ff0080] duration-100 md:blur-0' : 'text-black duration-100 md:blur-sm'
           }`}
           href={'/photo'}
         >

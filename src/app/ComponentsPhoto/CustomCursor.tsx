@@ -29,7 +29,7 @@ export default function CustomCursor() {
   return (
     <div
       ref={cursorRef}
-      className={`pointer-events-none fixed z-50 h-10 w-10 rounded-full mix-blend-difference transition-opacity ${
+      className={`pointer-events-none fixed z-50 h-10 w-10 cursor-none rounded-full mix-blend-difference transition-opacity ${
         isCursorVisible ? 'opacity-100' : 'opacity-0'
       }`}
       style={{

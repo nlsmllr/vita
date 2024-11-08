@@ -17,11 +17,10 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ link, visible }) =
   }, []);
 
   return (
-    <div className="fixed -right-10 -top-10 z-30 text-center uppercase">
+    <div className="fixed -right-10 -top-10 z-30 cursor-none text-center uppercase">
       <Link href={`/${link}`} className="cursor-none">
         <div className="dotPulse relative flex h-20 w-20 items-center justify-center transition duration-100 sm:hover:blur-sm" />
       </Link>
-
       {showLabel && visible && (
         <div className="fadeInLabel sm:right-22 absolute right-16 top-28 flex -translate-y-1/2 transform items-center sm:top-32">
           <span className="-mr-5 pt-16 text-xl font-black tracking-wide text-black sm:-mr-4">Get in Touch</span>
