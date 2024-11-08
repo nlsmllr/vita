@@ -35,7 +35,7 @@ export default function Home() {
   }, [colorChange]);
 
   return (
-    <main className="mx-auto mt-72 flex h-auto cursor-none flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
+    <main className="mx-auto mt-72 flex h-auto w-screen cursor-none flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
       <CustomCursor />
       <ContactButton link={'contact'} visible={true} />
       <Link className="cursor-none" href={'/'}>

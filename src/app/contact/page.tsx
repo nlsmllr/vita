@@ -5,7 +5,7 @@ import CustomCursor from '../ComponentsPhoto/CustomCursor';
 
 export default function Photographer() {
   return (
-    <main className="mx-auto mt-72 flex h-auto cursor-none flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
+    <main className="mx-auto mt-72 flex h-auto w-screen cursor-none flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
       <CustomCursor />
       <ContactButton link={''} visible={false} />
       <Link className="cursor-none" href={'/'}>
