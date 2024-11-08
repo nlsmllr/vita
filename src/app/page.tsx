@@ -45,8 +45,8 @@ export default function Home() {
         <Link
           className={`cursor-none md:blur-sm md:transition-all md:duration-300 md:hover:blur-0 ${
             colorChange
-              ? 'text-[#ff0080] delay-100 duration-300 md:blur-0'
-              : 'text-black delay-100 duration-300 md:blur-sm'
+              ? 'text-[#ff0080] delay-100 duration-300 sm:delay-0 md:blur-0'
+              : 'text-black delay-100 duration-300 sm:delay-0 md:blur-sm'
           }`}
           href={'/dev'}
         >
