@@ -26,7 +26,7 @@ export default function Photo() {
           <h1 className="-mt-10 text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>
         </Link>
       </section>
-      <section className="relative z-20 mt-[700px] cursor-none pb-[50px] sm:mx-40">
+      <section className="relative z-20 mt-[700px] cursor-none pb-[0px] sm:mx-40">
         <div className="grid grid-cols-1 gap-4 px-12 sm:p-4 md:grid-cols-4">
           {imageFilenames.map((filename, index) => (
             <div
