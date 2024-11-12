@@ -33,7 +33,7 @@ export const Terminal = () => {
         break;
       case 'help':
         output =
-          'Supported commands:\n\tcat cv\n\t\tDisplay my CV\n\techo [text]\n\t\tRepeat the text back to you\n\t418\n\t\tTry me!\n\tclear\n\t\tClear the terminal\n\texit\n\t\tReturn to the landing page';
+          'Supported commands:\n\tcat cv\n\t\tDisplay my CV\n\techo [text]\n\t\tRepeat the text back to you\n\tok\n\t\tTry me!\n\t418\n\t\tTry me!\n\tclear\n\t\tClear the terminal\n\texit\n\t\tReturn to the landing page';
         setCommands(prev => [...prev, `> ${input}`, output]);
         break;
       case '418':
@@ -51,6 +51,22 @@ export const Terminal = () => {
       case 'exit':
         router.push('/');
         return;
+      case 'ok':
+        output = `
+       ______
+  .---<__. \\ \\
+  \`---._  \\ \\ \\
+   ,----\`- \`.))
+  / ,--.   )  |
+ /_/    >     |
+ |,\\__-'      |
+  \\_           \\
+    ~~-___      )
+          \\      \\
+
+`;
+        setCommands(prev => [...prev, `> ${input}`, output]);
+        break;
       default:
         output = `Command not found: ${input}. Type "help" for a list of available commands.`;
         setCommands(prev => [...prev, `> ${input}`, output]);
