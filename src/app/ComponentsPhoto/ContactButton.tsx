@@ -12,7 +12,7 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ link, visible }) =
   const [showLabel, setShowLabel] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowLabel(true), 500);
+    const timer = setTimeout(() => setShowLabel(true), 3500);
     return () => clearTimeout(timer);
   }, []);
 
