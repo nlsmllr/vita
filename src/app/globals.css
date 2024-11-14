@@ -96,7 +96,7 @@ body {
 }
 
 /* Label styling */
-.fadeInLabel {
+.fadeInOutLabel {
   opacity: 0;
   animation: fadeInOut 3s ease-in-out forwards; /* Adjust duration as needed */
 }

@@ -22,7 +22,7 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ link, visible }) =
         <div className="dotPulse relative flex h-20 w-20 items-center justify-center transition duration-100 sm:hover:blur-sm" />
       </Link>
       {showLabel && visible && (
-        <div className="fadeInLabel absolute right-7 top-28 flex -translate-y-1/2 scale-75 transform items-center sm:right-16 sm:top-32 sm:scale-100">
+        <div className="fadeInOutLabel absolute right-7 top-28 flex -translate-y-1/2 scale-75 transform items-center sm:right-16 sm:top-32 sm:scale-100">
           <span className="-mr-5 pt-16 text-xl font-black tracking-wide text-black sm:-mr-4">Get in Touch</span>
           <svg className="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3" width="200" height="150">
             <g data-name="Layer_1">
