@@ -12,15 +12,13 @@ export const CheckItOut = ({}) => {
 
   return (
     showLabel && (
-      <div className="fadeInOutLabel absolute mt-[415px] flex scale-75 items-end pt-3 uppercase sm:bottom-16 sm:scale-100 sm:pr-12 md:bottom-[10vh]">
+      <div className="fadeInOutLabel absolute mt-[415px] flex scale-75 items-center pt-3 uppercase sm:bottom-16 sm:scale-100 sm:pr-12 md:bottom-[10vh]">
         {/* First SVG */}
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3" className="h-28 w-28 fill-current text-black">
           <path d="M98.1,12.8l169.3,120.8c5.5,9.1-10,30-22.5,28.7-11.9-1.3-65.3-39-80.7-47.5-5.3-3-4.6-9.1-13.1-2.3,117.7,250.2,389.9,400.2,661.9,390.5l9.4,17.9c-10,.1-21.3,8.1-29.2,9.2-122.9,18.2-279.3-27.5-389-88.4-123.1-68.3-224.5-165.7-279.7-297.7-12.5,3.4-3.8,6.5-3.6,12.7,1.3,36.3,2.2,76.7-11,110.4l-12.4-6-17-205.8c.4-7.5,10.3-43.7,17.5-42.3Z" />
         </svg>
 
-        <span className="pl-4 pr-2 text-center text-xl font-black tracking-wide text-black">
-          Check <br /> it out
-        </span>
+        <span className="pl-3 pr-1 pt-[58px] text-center text-xl font-black tracking-wide text-black">Deep Dive</span>
 
         {/* Second SVG */}
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3" className="h-28 w-28 fill-current text-black">
