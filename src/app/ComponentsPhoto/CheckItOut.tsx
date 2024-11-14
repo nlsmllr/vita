@@ -6,7 +6,7 @@ export const CheckItOut = ({}) => {
   const [showLabel, setShowLabel] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowLabel(true), 3500);
+    const timer = setTimeout(() => setShowLabel(true), 500);
     return () => clearTimeout(timer);
   }, []);
 
