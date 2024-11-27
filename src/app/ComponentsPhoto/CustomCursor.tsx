@@ -40,7 +40,7 @@ export default function CustomCursor() {
   return (
     <div
       ref={cursorRef}
-      className={`pointer-events-none fixed z-50 rounded-full mix-blend-difference transition-[width,height] duration-500 ease-in-out ${
+      className={`pointer-events-none fixed z-50 cursor-none rounded-full mix-blend-difference transition-[width,height] duration-500 ease-in-out ${
         isCursorVisible ? 'opacity-100' : 'opacity-0'
       } ${isHoveringLink ? 'h-16 w-16' : 'h-10 w-10'}`}
       style={{
