@@ -1,5 +1,3 @@
-// Constants/history.ts
-
 export const history = [
   {
     role: 'Working student frontend engineering',

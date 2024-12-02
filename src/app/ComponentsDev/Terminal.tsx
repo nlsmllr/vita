@@ -17,9 +17,8 @@ export const Terminal = () => {
     e.preventDefault();
     let output = '';
 
-    // Split the input to separate the command from its arguments
     const [command, ...args] = input.trim().split(/\s+/);
-    const argumentsString = args.join(' '); // Rejoin the arguments to form the full string after the command
+    const argumentsString = args.join(' ');
 
     switch (command.toLowerCase()) {
       case 'cat':
@@ -95,7 +94,6 @@ export const Terminal = () => {
                 }
               }}
               className="h-48 w-full resize-none items-start border-none bg-transparent font-mono outline-none"
-              // autoFocus
             />
           </label>
         </form>

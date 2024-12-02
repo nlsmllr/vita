@@ -29,9 +29,6 @@ export default function Home() {
             <button onClick={handleOpen} className="mt-5 rounded-lg bg-zinc-200 p-3 px-5 text-xl hover:shadow-lg">
               Hey, come back here!
             </button>
-            {/* <button onClick={handleOpen} className="mt-5 rounded-lg bg-zinc-200 p-3 px-5 text-xl hover:shadow-lg">
-              Take me Home!
-            </button> */}
           </>
         )}
       </div>
