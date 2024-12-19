@@ -17,13 +17,17 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ link, visible }) =
   }, []);
 
   return (
-    <div className="fixed -right-10 -top-10 z-30 cursor-none text-center uppercase">
-      <Link href={`/${link}`} className="cursor-none">
-        <div className="dotPulse relative flex h-20 w-20 items-center justify-center transition duration-100 sm:hover:blur-sm" />
+    <div className="fixed -right-[120px] -top-[120px] z-30 text-center uppercase">
+      <Link href={`/${link}`} className="block h-60 w-60 cursor-none">
+        {/* Larger clickable area */}
+        <div className="relative flex h-full w-full items-center justify-center">
+          <div className="dotPulse relative h-20 w-20 transition duration-100 sm:hover:blur-sm" />
+        </div>
       </Link>
       {showLabel && visible && (
-        <div className="fadeInOutLabel absolute right-7 top-28 flex -translate-y-1/2 scale-75 transform items-center sm:right-16 sm:top-32 sm:scale-100">
-          <span className="-mr-5 pt-16 text-xl font-black tracking-wide text-black sm:-mr-4">Get in Touch</span>
+        <div className="absolute right-28 top-44 -z-10 flex -translate-y-1/2 scale-75 transform items-center sm:right-36 sm:top-48 sm:scale-100">
+          {/* Adjusted right and top properties */}
+          <span className="-z-10 -mr-5 pt-16 text-xl font-black tracking-wide text-black sm:-mr-4">Get in Touch</span>
           <svg className="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3" width="200" height="150">
             <g data-name="Layer_1">
               <path
