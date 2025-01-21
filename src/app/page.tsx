@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-import { CheckItOut } from './ComponentsPhoto/CheckItOut';
 import { ContactButton } from './ComponentsPhoto/ContactButton';
 import CustomCursor from './ComponentsPhoto/CustomCursor';
 
@@ -37,7 +36,6 @@ export default function Home() {
 
   return (
     <main className="flex justify-center">
-      <CheckItOut />
       <div className="mx-auto mt-72 flex h-auto cursor-none flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
         <CustomCursor />
         <ContactButton link={'contact'} visible={true} />

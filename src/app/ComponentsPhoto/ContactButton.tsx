@@ -12,7 +12,7 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ link, visible }) =
   const [showLabel, setShowLabel] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowLabel(true), 3500);
+    const timer = setTimeout(() => setShowLabel(true), 0);
     return () => clearTimeout(timer);
   }, []);
 
@@ -25,7 +25,7 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ link, visible }) =
         </div>
       </Link>
       {showLabel && visible && (
-        <div className="absolute right-28 top-44 -z-10 flex -translate-y-1/2 scale-75 transform items-center sm:right-36 sm:top-48 sm:scale-100">
+        <div className="absolute right-28 top-44 -z-10 flex -translate-y-1/2 scale-75 transform items-center transition-all sm:right-36 sm:top-48 sm:scale-100">
           {/* Adjusted right and top properties */}
           <span className="-z-10 -mr-5 pt-16 text-xl font-black tracking-wide text-black sm:-mr-4">Get in Touch</span>
           <svg className="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3" width="200" height="150">
