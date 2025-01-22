@@ -5,18 +5,22 @@ import { history } from '../Constants/history';
 import { projects } from '../Constants/projects';
 import { skills } from '../Constants/skills';
 
-export const Content = () => {
+interface Props {
+  color: string;
+}
+
+export const Content = ({ color }: Props) => {
   return (
-    <div className="text-s pt-6 font-mono leading-5 text-white">
+    <div className={`text-s cursor-none pt-6 font-mono leading-5 text-${color}`}>
       <nav className="items-center pb-12 text-center font-mono sm:flex sm:flex-row sm:justify-between">
         <h1 className="font-thin">
-          <Link href="/" className="link">
+          <Link href="/" className="link cursor-none">
             NILS MÜLLER(1)
           </Link>
         </h1>
         <h1 className="font-thin">CURRICULUM VITAE</h1>
         <h1 className="font-thin">
-          <Link href="/" className="link">
+          <Link href="/" className="link cursor-none">
             NILS MÜLLER(1)
           </Link>
         </h1>

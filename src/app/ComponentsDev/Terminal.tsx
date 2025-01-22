@@ -78,7 +78,7 @@ export const Terminal = () => {
       <div className="scrollbar-hide h-[69vh] w-full overflow-y-auto rounded-lg p-4 font-mono sm:h-full">
         {commands.map((line, index) => (
           <pre key={index} className="whitespace-pre-wrap">
-            {line === 'vita' ? <Content key={index} /> : line}
+            {line === 'vita' ? <Content color="white" key={index} /> : line}
           </pre>
         ))}
         <form className="mb-20" onSubmit={handleSubmit}>
