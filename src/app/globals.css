@@ -80,8 +80,8 @@ body {
 }
 
 .fade-out-label {
-  animation: fadeOut 0.5s ease-out forwards; /* Adjusted for 0.5-second fade */
-  animation-delay: 3s; /* Starts fading out after 3 seconds */
+  animation: fadeOut 0.5s ease-out forwards;
+  animation-delay: 3s;
 }
 
 @keyframes fadeOut {
