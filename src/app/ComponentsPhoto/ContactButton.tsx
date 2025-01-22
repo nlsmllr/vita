@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 interface ContactButtonProps {
   link: string;
@@ -6,6 +7,19 @@ interface ContactButtonProps {
 }
 
 export const ContactButton: React.FC<ContactButtonProps> = ({ link, visible }) => {
+  const [showLabel, setShowLabel] = useState(false);
+
+  useEffect(() => {
+    if (visible) {
+      setShowLabel(true);
+      const timer = setTimeout(() => {
+        setShowLabel(false);
+      }, 3500);
+
+      return () => clearTimeout(timer);
+    }
+  }, [visible]);
+
   return (
     <div className="fixed -right-[120px] -top-[120px] z-30 text-center uppercase">
       <Link href={`/${link}`} className="block h-60 w-60 cursor-none">
@@ -13,8 +27,8 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ link, visible }) =
           <div className="dotPulse relative h-20 w-20 transition duration-100 sm:hover:blur-sm" />
         </div>
       </Link>
-      {visible && (
-        <div className="absolute right-28 top-44 -z-10 flex -translate-y-1/2 scale-75 transform items-center transition-all sm:right-36 sm:top-48 sm:scale-100">
+      {showLabel && (
+        <div className="fade-out-label absolute right-28 top-44 -z-10 flex -translate-y-1/2 scale-75 transform items-center transition-all sm:right-36 sm:top-48 sm:scale-100">
           <span className="-z-10 -mr-5 pt-16 text-xl font-black tracking-wide text-black sm:-mr-4">Get in Touch</span>
           <svg className="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3" width="200" height="150">
             <g data-name="Layer_1">

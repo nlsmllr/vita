@@ -78,3 +78,17 @@ body {
     box-shadow: 0 0 0 40px #0000;
   }
 }
+
+.fade-out-label {
+  animation: fadeOut 0.5s ease-out forwards; /* Adjusted for 0.5-second fade */
+  animation-delay: 3s; /* Starts fading out after 3 seconds */
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
