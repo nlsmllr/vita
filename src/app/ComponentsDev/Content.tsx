@@ -66,7 +66,12 @@ export const Content = ({ color }: Props) => {
                     <li key={idx}>
                       *{' '}
                       {detail.link ? (
-                        <a href={detail.link} className="link italic" target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={detail.link}
+                          className="link cursor-none italic"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           {detail.text}
                         </a>
                       ) : (
@@ -109,7 +114,7 @@ export const Content = ({ color }: Props) => {
               <li key={index}>
                 *{' '}
                 {project.link ? (
-                  <a href={project.link} className="link italic" target="_blank" rel="noopener noreferrer">
+                  <a href={project.link} className="link cursor-none italic" target="_blank" rel="noopener noreferrer">
                     {project.text}
                   </a>
                 ) : (
@@ -130,24 +135,24 @@ export const Content = ({ color }: Props) => {
         <h2 className="bullet_point font-bold tracking-wider">CONTACT</h2>
         <p className="ml-[50px]">
           E-mail:{' '}
-          <Link href="mailto:info@nils-mueller.com" className="link">
+          <Link href="mailto:info@nils-mueller.com" className="link cursor-none">
             info@nils-mueller.com
           </Link>
           <br />
           Mobile:{' '}
-          <Link href="tel:+4915115776494" className="link">
+          <Link href="tel:+4915115776494" className="link cursor-none">
             +49 151 15776494
           </Link>
           <br />
-          <Link href="https://www.linkedin.com/in/nils-m%C3%BCller-5ab765220/" className="link">
+          <Link href="https://www.linkedin.com/in/nils-m%C3%BCller-5ab765220/" className="link cursor-none">
             LinkedIn
           </Link>
           <br />
-          <Link href="https://github.com/nlsmllr/" className="link">
+          <Link href="https://github.com/nlsmllr/" className="link cursor-none">
             GitHub
           </Link>
           <br />
-          <Link href="/Imprint" className="link">
+          <Link href="/Imprint" className="link cursor-none">
             Imprint
           </Link>
         </p>

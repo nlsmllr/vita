@@ -18,6 +18,9 @@ export default function Photographer() {
         <Link href="tel:+4915115776494" className="link cursor-none md:duration-300 md:hover:blur-sm">
           +49 151 15776494
         </Link>
+        <Link href="/vitae" className="link cursor-none md:duration-300 md:hover:blur-sm">
+          Vitae
+        </Link>
       </div>
     </main>
   );

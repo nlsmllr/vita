@@ -7,7 +7,7 @@ const page = () => {
   return (
     <div className="flex h-full w-screen cursor-none justify-center">
       <CustomCursor />
-      <div className="w-2/3 cursor-none">
+      <div className="mb-20 w-1/2 cursor-none">
         <Content color="black" />
       </div>
     </div>
