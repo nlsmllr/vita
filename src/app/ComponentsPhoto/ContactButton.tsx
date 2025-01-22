@@ -1,7 +1,4 @@
-'use client';
-
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
 interface ContactButtonProps {
   link: string;
@@ -9,24 +6,15 @@ interface ContactButtonProps {
 }
 
 export const ContactButton: React.FC<ContactButtonProps> = ({ link, visible }) => {
-  const [showLabel, setShowLabel] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowLabel(true), 0);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div className="fixed -right-[120px] -top-[120px] z-30 text-center uppercase">
       <Link href={`/${link}`} className="block h-60 w-60 cursor-none">
-        {/* Larger clickable area */}
         <div className="relative flex h-full w-full items-center justify-center">
           <div className="dotPulse relative h-20 w-20 transition duration-100 sm:hover:blur-sm" />
         </div>
       </Link>
-      {showLabel && visible && (
+      {visible && (
         <div className="absolute right-28 top-44 -z-10 flex -translate-y-1/2 scale-75 transform items-center transition-all sm:right-36 sm:top-48 sm:scale-100">
-          {/* Adjusted right and top properties */}
           <span className="-z-10 -mr-5 pt-16 text-xl font-black tracking-wide text-black sm:-mr-4">Get in Touch</span>
           <svg className="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3" width="200" height="150">
             <g data-name="Layer_1">
