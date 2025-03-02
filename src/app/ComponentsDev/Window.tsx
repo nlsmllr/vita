@@ -11,7 +11,7 @@ interface WindowProps {
 
 export const Window = ({
   children,
-  title = 'nils.mueller — nils.mueller@Nils-MBP- - - -zsh — 124x32',
+  title = `nils.mueller — nils.mueller@Nils-MBP- - - -zsh — ${window.innerWidth}x${window.innerHeight}`,
   onClose,
   onMinimize,
   isMinimized,
