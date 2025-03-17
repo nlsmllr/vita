@@ -9,6 +9,11 @@ const config: Config = {
           light: '#DEDBD2',
           dark: '#A8A076',
         },
+        primaryBackground: '#e8eaed',
+        secondaryBackground: '#c5c7c9',
+      },
+      fontFamily: {
+        lato: ['var(--font-lato)'],
       },
     },
   },

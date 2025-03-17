@@ -22,7 +22,7 @@ export const Terminal = () => {
 
     switch (command.toLowerCase()) {
       case 'cat':
-        if (argumentsString === 'vita') {
+        if (argumentsString === 'vita' || argumentsString === 'cv') {
           output = 'Displaying vita details...';
           setCommands(prev => [...prev, `> ${input}`, output, 'vita']);
         } else {

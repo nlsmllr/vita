@@ -11,16 +11,16 @@ interface Props {
 
 export const Content = ({ color }: Props) => {
   return (
-    <div className={`text-s cursor-none pt-6 font-mono leading-5 text-${color}`}>
+    <div className={`text-s pt-6 font-mono leading-5 text-${color}`}>
       <nav className="items-center pb-12 text-center font-mono sm:flex sm:flex-row sm:justify-between">
         <h1 className="font-thin">
-          <Link href="/" className="link cursor-none">
+          <Link href="/" className="link">
             NILS MÜLLER(1)
           </Link>
         </h1>
         <h1 className="font-thin">CURRICULUM VITAE</h1>
         <h1 className="font-thin">
-          <Link href="/" className="link cursor-none">
+          <Link href="/" className="link">
             NILS MÜLLER(1)
           </Link>
         </h1>
@@ -66,12 +66,7 @@ export const Content = ({ color }: Props) => {
                     <li key={idx}>
                       *{' '}
                       {detail.link ? (
-                        <a
-                          href={detail.link}
-                          className="link cursor-none italic"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
+                        <a href={detail.link} className="link italic" target="_blank" rel="noopener noreferrer">
                           {detail.text}
                         </a>
                       ) : (
@@ -114,7 +109,7 @@ export const Content = ({ color }: Props) => {
               <li key={index}>
                 *{' '}
                 {project.link ? (
-                  <a href={project.link} className="link cursor-none italic" target="_blank" rel="noopener noreferrer">
+                  <a href={project.link} className="link italic" target="_blank" rel="noopener noreferrer">
                     {project.text}
                   </a>
                 ) : (
@@ -135,24 +130,24 @@ export const Content = ({ color }: Props) => {
         <h2 className="bullet_point font-bold tracking-wider">CONTACT</h2>
         <p className="ml-[50px]">
           E-mail:{' '}
-          <Link href="mailto:info@nils-mueller.com" className="link cursor-none">
+          <Link href="mailto:info@nils-mueller.com" className="link">
             info@nils-mueller.com
           </Link>
           <br />
           Mobile:{' '}
-          <Link href="tel:+4915115776494" className="link cursor-none">
+          <Link href="tel:+4915115776494" className="link">
             +49 151 15776494
           </Link>
           <br />
-          <Link href="https://www.linkedin.com/in/nils-m%C3%BCller-5ab765220/" className="link cursor-none">
+          <Link href="https://www.linkedin.com/in/nils-m%C3%BCller-5ab765220/" className="link">
             LinkedIn
           </Link>
           <br />
-          <Link href="https://github.com/nlsmllr/" className="link cursor-none">
+          <Link href="https://github.com/nlsmllr/" className="link">
             GitHub
           </Link>
           <br />
-          <Link href="/Imprint" className="link cursor-none">
+          <Link href="/Imprint" className="link">
             Imprint
           </Link>
         </p>

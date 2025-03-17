@@ -3,9 +3,13 @@ import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import type { Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Lato } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const lato = Lato({
+  weight: ['100', '300', '400', '700', '900'],
+  subsets: ['latin'],
+  variable: '--font-lato',
+});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -26,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${lato.variable}`}>
         {children}
         <Analytics />
       </body>

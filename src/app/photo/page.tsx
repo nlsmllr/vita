@@ -2,15 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { ContactButton } from '../ComponentsPhoto/ContactButton';
-import CustomCursor from '../ComponentsPhoto/CustomCursor';
 import { imageFilenames } from '../Constants/photos';
 
 export const dynamic = 'force-dynamic';
 
 export default function Photo() {
   return (
-    <div className="relative h-auto w-screen cursor-none bg-white pb-10 text-black">
-      <CustomCursor />
+    <div className="relative h-auto w-screen pb-10 text-black">
       <ContactButton link={'contact'} visible={false} />
       <div className="flex h-[75vh] w-screen items-end justify-center">
         <div className="text-md z-10 font-light uppercase tracking-widest text-zinc-950">scroll down</div>
@@ -22,11 +20,11 @@ export default function Photo() {
         }}
       ></div>
       <section className="fixed inset-0 z-10 flex h-screen items-center justify-center">
-        <Link className="mx-auto flex cursor-none flex-col items-center justify-center uppercase text-black" href={'/'}>
+        <Link className="mx-auto flex flex-col items-center justify-center uppercase text-black" href={'/'}>
           <h1 className="-mt-10 text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>
         </Link>
       </section>
-      <section className="relative z-20 mt-[700px] cursor-none pb-[0px] sm:mx-40">
+      <section className="relative z-20 mt-[700px] pb-[0px] sm:mx-40">
         <div className="grid grid-cols-1 gap-4 px-12 sm:p-4 md:grid-cols-4">
           {imageFilenames.map((filename, index) => (
             <div
