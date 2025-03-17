@@ -1,21 +1,29 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface WindowProps {
   children: React.ReactNode;
-  title?: string;
   onClose: () => void;
   onMinimize: () => void;
-  isMinimized: boolean;
+  isMinimized?: boolean;
 }
 
-export const Window = ({
-  children,
-  title = `nils.mueller — nils.mueller@Nils-MBP- - - -zsh — ${window.innerWidth}x${window.innerHeight}`,
-  onClose,
-  onMinimize,
-  isMinimized,
-}: WindowProps) => {
+export const Window = ({ children, onClose, onMinimize, isMinimized = false }: WindowProps) => {
+  const [dimensions, setDimensions] = useState('');
+
+  useEffect(() => {
+    const updateDimensions = () => {
+      setDimensions(`${window.innerWidth}x${window.innerHeight}`);
+    };
+
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, []);
+
+  const windowTitle = `nils.mueller — nils.mueller@Nils-MBP- - - -zsh — ${dimensions}`;
+
   return (
     <div
       className={`transform cursor-auto transition-all duration-300 ease-in-out ${
@@ -39,7 +47,7 @@ export const Window = ({
             </Link>
           </div>
           <div className="flex-grow text-center">
-            <span className="text-sm text-zinc-400">{title}</span>
+            <span className="text-sm text-zinc-400">{windowTitle}</span>
           </div>
         </div>
         <div className="scrollbar-hide h-full overflow-auto rounded-b-lg font-mono text-sm text-gray-300">
