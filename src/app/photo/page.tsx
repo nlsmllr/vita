@@ -45,10 +45,12 @@ export default function Photo() {
                 width={2500}
                 height={2500}
                 className="w-full object-cover transition md:duration-200"
+                aria-label={`Photography work ${index + 1}`}
+                tabIndex={0}
               />
-              <span className="absolute -right-8 top-0 text-xl text-[#ff0080] contrast-more:text-[#883860]">
+              <p className="absolute -right-8 top-0 text-xl text-[#ff0080] contrast-more:text-[#883860]">
                 {String(index + 1).padStart(2, '0')}
-              </span>
+              </p>
             </div>
           ))}
         </div>
