@@ -9,7 +9,7 @@ import CustomCursor from './ComponentsPhoto/CustomCursor';
 export default function Home() {
   return (
     <main className="justify-center bg-[#d9b783]">
-      <div className="mx-auto mt-72 flex h-auto scale-95 cursor-none flex-col items-center justify-center sm:mt-0 sm:h-screen sm:justify-evenly">
+      <div className="mx-auto flex h-screen scale-95 cursor-none flex-col items-center justify-evenly">
         <CustomCursor />
         {/* <ContactButton link={'contact'} visible={true} /> */}
         <div className="-mb-16 -ml-40">
