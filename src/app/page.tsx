@@ -1,70 +1,71 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
-import { ContactButton } from './ComponentsPhoto/ContactButton';
+// import { ContactButton } from './ComponentsPhoto/ContactButton';
 import CustomCursor from './ComponentsPhoto/CustomCursor';
 
 export default function Home() {
-  const [colorChange, setColorChange] = useState(false);
-
-  useEffect(() => {
-    let scrollTimeout: NodeJS.Timeout;
-
-    const handleScroll = () => {
-      if (!colorChange) {
-        setColorChange(true);
-        setTimeout(() => {
-          setColorChange(false);
-        }, 500);
-      }
-
-      clearTimeout(scrollTimeout);
-
-      scrollTimeout = setTimeout(() => {}, 100);
-    };
-
-    window.addEventListener('wheel', handleScroll, { passive: false });
-    window.addEventListener('touchmove', handleScroll, { passive: false });
-
-    return () => {
-      window.removeEventListener('wheel', handleScroll);
-      window.removeEventListener('touchmove', handleScroll);
-    };
-  }, [colorChange]);
-
   return (
-    <main className="flex justify-center">
-      <div className="mx-auto mt-72 flex h-auto cursor-none flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
+    <main className="justify-center bg-[#d9b783]">
+      <div className="mx-auto mt-72 flex h-auto scale-95 cursor-none flex-col items-center justify-center sm:mt-0 sm:h-screen sm:justify-evenly">
         <CustomCursor />
-        <ContactButton link={'contact'} visible={true} />
-        <Link className="cursor-none" href={'/'}>
-          <h1 className="text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>
-        </Link>
-        <div className="flex flex-col items-center">
-          <div className="my-7 flex cursor-none flex-col space-x-[69px] text-3xl font-bold tracking-wide sm:my-0 sm:flex-row sm:text-4xl">
-            <Link
-              className={`cursor-none md:blur-sm md:transition-all md:duration-300 md:hover:blur-0 ${
-                colorChange
-                  ? 'text-[#ff0080] duration-100 md:animate-bounce md:blur-0'
-                  : 'text-black duration-100 md:blur-sm'
-              }`}
-              href={'/dev'}
-            >
-              Developer
-            </Link>
-            <Link
-              className={`cursor-none md:blur-sm md:transition-all md:duration-300 md:hover:blur-0 ${
-                colorChange
-                  ? 'text-[#ff0080] duration-100 md:animate-bounce md:blur-0'
-                  : 'text-black duration-100 md:blur-sm'
-              }`}
-              href={'/photo'}
-            >
-              Photographer
-            </Link>
-          </div>
+        {/* <ContactButton link={'contact'} visible={true} /> */}
+        <div className="-mb-16 -ml-40">
+          <h1 className="tracking-wid mb-3 text-5xl font-bold uppercase text-[#674529]">Nils Müller</h1>
+          <h2 className="tracking-wid text-2xl font-bold uppercase text-[#674529]">dev & photographer</h2>
+        </div>
+        <div className="relative">
+          <Image
+            src={'/Nils_actionFigure.png'}
+            alt="action figure of Nils Müller. There is a laptop, two degreees and a camera on his left side."
+            width={500}
+            height={500}
+          />
+          <Link href={'/dev'} className="group cursor-none">
+            <Image
+              src={'/Laptop.png'}
+              alt="laptop"
+              width={179}
+              height={179}
+              className="absolute right-[280px] top-[79px] transition-all duration-300 hover:scale-[115%] hover:drop-shadow-2xl"
+            />
+            <span className="absolute right-[550px] top-[122px] text-3xl font-bold uppercase tracking-wide text-[#674529] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              Dev
+            </span>
+          </Link>
+          <Link href={'/vitae'} className="group cursor-none">
+            <Image
+              src={'/degrees.png'}
+              alt="laptop"
+              width={179}
+              height={179}
+              className="absolute right-[280px] top-[240px] transition-all duration-300 hover:scale-[115%] hover:drop-shadow-2xl"
+            />
+            <span className="absolute right-[550px] top-[300px] text-3xl font-bold uppercase tracking-wide text-[#674529] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              Vitae
+            </span>
+          </Link>
+          <Link href={'/photo'} className="group cursor-none">
+            <Image
+              src={'/camera.png'}
+              alt="laptop"
+              width={142}
+              height={179}
+              className="absolute right-[308px] top-[426px] transition-all duration-300 hover:scale-[115%] hover:drop-shadow-2xl"
+            />
+            <span className="absolute right-[550px] top-[470px] text-3xl font-bold uppercase tracking-wide text-[#674529] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              Photo
+            </span>
+          </Link>
+          <Link
+            href={'/contact'}
+            aria-label="Contact Link"
+            className="absolute right-[300px] top-[590px] cursor-none text-3xl font-bold uppercase tracking-wide text-[#674529] transition-all duration-300 hover:scale-[115%] hover:drop-shadow-2xl"
+          >
+            Contact
+          </Link>
         </div>
       </div>
     </main>
