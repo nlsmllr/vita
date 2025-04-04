@@ -4,6 +4,7 @@ export const education = [
     year: '2025',
     institution: 'Fachhochschule, Wedel',
     details: [
+      'THESIS: Web accessibitly based on WCAG for the BFSG and development of a tool for accessible web development',
       'Various programming languages and concepts such as object-oriented, procedural and functional programming',
       'Databases',
       'Web development',

@@ -41,8 +41,9 @@ export const Content = ({ color }: Props) => {
         <section>
           <h2 className="bullet_point font-bold tracking-wider">DESCRIPTION</h2>
           <p className="ml-[50px]">
-            <span className="font-black">nils</span> is an 8th semester student at Fachhochschule Wedel and currently
-            employed as a frontend developer at Protofy in Hamburg, Germany.
+            <span className="font-black">nils</span> is a Fachhochschule Wedel graduate with a passion for frontend
+            development. He combines technical expertise with creative flair and is always eager to learn and explore
+            new technologies.
           </p>
         </section>
         <br />
