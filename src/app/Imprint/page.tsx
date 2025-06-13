@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 
-import { Imprint } from '../ComponentsDev/Imprint';
-import { Window } from '../ComponentsDev/Window';
+import { Imprint } from '../Components/ComponentsDev/Imprint';
+import { Window } from '../Components/ComponentsDev/Window';
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(true);

@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { ContactButton } from '../ComponentsPhoto/ContactButton';
-import CustomCursor from '../ComponentsPhoto/CustomCursor';
-import { imageFilenames } from '../Constants/photos';
+import { ContactButton } from '../Components/ComponentsPhoto/ContactButton';
+import CustomCursor from '../Components/ComponentsPhoto/CustomCursor';
+import { imageFilenames } from '../Components/Constants/photos';
 
 export const dynamic = 'force-dynamic';
 

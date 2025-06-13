@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 
-import { Terminal } from '../ComponentsDev/Terminal';
-import { Window } from '../ComponentsDev/Window';
+import { Terminal } from '../Components/ComponentsDev/Terminal';
+import { Window } from '../Components/ComponentsDev/Window';
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(true);
