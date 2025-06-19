@@ -4,22 +4,22 @@ import React from 'react';
 
 const Navigation = ({ invert = false }: { invert?: boolean }) => {
   return (
-    <div className={`${invert ? 'invert' : ''}`}>
-      <Link href="/">
+    <div className={`pointer-events-none z-50 cursor-none ${invert ? 'invert' : ''}`}>
+      <Link href="/" className="pointer-events-auto cursor-none">
         <h1 className={`text-6xl font-thin tracking-wide ${invert ? 'invert' : ''}`}>Nils Müller</h1>
       </Link>
       <p className={`text-xs font-thin ${invert ? 'invert' : ''}`}>Dev & Photo</p>
       <div className={`mt-16 flex w-fit flex-col gap-3 text-xs font-light ${invert ? 'invert' : ''}`}>
-        <Link className="h-7" href="/dev">
+        <Link className="pointer-events-auto h-7 cursor-none" href="/dev">
           dev
         </Link>
-        <Link className="h-7" href="/photo">
+        <Link className="pointer-events-auto h-7 cursor-none" href="/photo">
           Photo
         </Link>
-        <Link className="h-7" href="/contact">
+        <Link className="pointer-events-auto h-7 cursor-none" href="/contact">
           contact
         </Link>
-        <Link className="h-7" href="/imprint">
+        <Link className="pointer-events-auto h-7 cursor-none" href="/imprint">
           imprint
         </Link>
       </div>

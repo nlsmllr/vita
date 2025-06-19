@@ -12,12 +12,12 @@ interface RouteWrapperProps {
 
 const RouteWrapper: React.FC<RouteWrapperProps> = ({ children }) => {
   const segment = useSelectedLayoutSegment();
-  const isDev = segment === 'dev';
+  const isInvert = segment === 'contact';
 
   return (
-    <BackgroundFrame invert={isDev}>
-      <Navigation invert={isDev} />
-      {children}
+    <BackgroundFrame invert={isInvert}>
+      <Navigation invert={isInvert} />
+      <div className="absolute left-0 top-0 z-10 h-full w-full overflow-y-auto">{children}</div>
     </BackgroundFrame>
   );
 };

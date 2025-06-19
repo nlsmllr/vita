@@ -12,26 +12,14 @@ export default function Home() {
   const handleClose = () => {
     setIsVisible(false);
   };
-  const handleOpen = () => {
-    setIsVisible(true);
-  };
 
   const handleMinimize = () => {
     setIsMinimized(!isMinimized);
   };
 
   return (
-    <div className="relative h-[85vh] cursor-auto overflow-hidden scroll-auto sm:h-screen">
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center font-bold text-zinc-800">
-        <h1 className="text-5xl">Oops!</h1>
-        {!isVisible && (
-          <>
-            <button onClick={handleOpen} className="mt-5 rounded-lg bg-zinc-200 p-3 px-5 text-xl hover:shadow-lg">
-              Hey, come back here!
-            </button>
-          </>
-        )}
-      </div>
+    <div className="relative mt-[150px] h-[70vh] cursor-none overflow-hidden scroll-auto normal-case">
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center font-bold text-zinc-800"></div>
       {isVisible && (
         <div className="absolute z-20 flex h-full w-full items-start justify-center">
           <Window onClose={handleClose} onMinimize={handleMinimize} isMinimized={isMinimized}>

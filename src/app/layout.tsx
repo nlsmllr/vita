@@ -21,20 +21,15 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'Nils Müller',
-  description: 'Welcome to my CV',
+  description: 'Developer & Photographer',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={inter.className}>
         <CustomCursor />
         <RouteWrapper>{children}</RouteWrapper>
-
         <Analytics />
       </body>
     </html>
