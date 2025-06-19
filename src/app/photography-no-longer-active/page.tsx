@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import { ContactButton } from '../ComponentsPhoto/ContactButton';
-import CustomCursor from '../ComponentsPhoto/CustomCursor';
+import { ContactButton } from '../Components/ComponentsPhoto/ContactButton';
+import CustomCursor from '../Components/ComponentsPhoto/CustomCursor';
 
 export default function Photographer() {
   return (

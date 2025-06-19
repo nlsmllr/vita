@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Content } from '../ComponentsDev/Content';
-import CustomCursor from '../ComponentsPhoto/CustomCursor';
+import { Content } from '../Components/ComponentsDev/Content';
+import CustomCursor from '../Components/ComponentsPhoto/CustomCursor';
 
 const page = () => {
   return (
