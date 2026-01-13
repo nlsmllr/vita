@@ -64,6 +64,16 @@ export default function Home() {
             >
               Photographer
             </Link>
+            <Link
+              className={`cursor-none md:blur-sm md:transition-all md:duration-300 md:hover:blur-0 ${
+                colorChange
+                  ? 'text-[#ff0080] duration-100 md:animate-bounce md:blur-0'
+                  : 'text-black duration-100 md:blur-sm'
+              }`}
+              href={'/minis'}
+            >
+              Minis
+            </Link>
           </div>
         </div>
       </div>
