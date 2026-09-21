@@ -28,8 +28,144 @@ body::-webkit-scrollbar {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: #f7f6f2;
+  color: #2e2e2e;
+  background: #efe3ca;
+}
+
+.portfolio-hero {
+  position: relative;
+  display: flex;
+  min-height: 15rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+  overflow: visible;
+  border: 1px solid #2e2e2e;
+  border-radius: 1.5rem;
+  padding: 3rem 2rem 2rem;
+  box-shadow: 0 0.35rem 0 #2e2e2e;
+}
+
+.portfolio-hero h1,
+.portfolio-hero h2 {
+  margin: 0;
+  max-width: 90%;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.portfolio-hero--lavender {
+  min-height: 18rem;
+  background: #92a9e1;
+}
+
+.portfolio-hero--graphite {
+  min-height: 18rem;
+  align-items: flex-end;
+  background: #2e2e2e;
+  color: #92a9e1;
+}
+
+.portfolio-slash {
+  opacity: 0.45;
+}
+
+.portfolio-code {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  opacity: 0.8;
+}
+
+.portfolio-arrow {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  display: grid;
+  size: 5rem;
+  place-items: center;
+  border: 1px solid #2e2e2e;
+  border-radius: 1.5rem;
+  background: #92a9e1;
+  color: #2e2e2e;
+  font-size: 2.5rem;
+}
+
+.portfolio-arrow--left {
+  top: auto;
+  right: auto;
+  bottom: -1px;
+  left: -1px;
+}
+
+.portfolio-links,
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.portfolio-link,
+.portfolio-tags span {
+  border: 1px solid #2e2e2e;
+  border-radius: 999px;
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.portfolio-link span {
+  margin-left: 0.6rem;
+  opacity: 0.5;
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus-visible,
+.portfolio-tags span:hover {
+  background: #2e2e2e;
+  color: #efe3ca;
+  outline: none;
+}
+
+.portfolio-best-for {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: -0.02em;
+}
+
+.portfolio-best-for span {
+  color: #92a9e1;
+  padding: 0 0.3rem;
+}
+
+@media (max-width: 640px) {
+  .portfolio-hero {
+    min-height: 13rem;
+    border-radius: 1rem;
+    padding: 2.5rem 1.25rem 1.25rem;
+  }
+
+  .portfolio-hero--lavender,
+  .portfolio-hero--graphite {
+    min-height: 14rem;
+  }
+
+  .portfolio-arrow {
+    size: 3.5rem;
+    border-radius: 1rem;
+    font-size: 1.75rem;
+  }
+
+  .portfolio-best-for {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
 }
 
 .portfolio-cards {

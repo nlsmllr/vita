@@ -6,48 +6,69 @@ import { ContactButton } from './ComponentsPhoto/ContactButton';
 import CustomCursor from './ComponentsPhoto/CustomCursor';
 
 const destinations = [
-  { label: 'Developer', href: '/dev', className: 'portfolio-card--paper' },
-  { label: 'Photographer', href: '/photo', className: 'portfolio-card--stone' },
-  { label: 'Minis', href: '/minis', className: 'portfolio-card--coral' },
-  { label: 'Vitae', href: '/vitae', className: 'portfolio-card--black' },
+  { label: 'Developer', href: '/dev', className: 'portfolio-card--lavender' },
+  { label: 'Photographer', href: '/photo', className: 'portfolio-card--lavender' },
+  { label: 'Minis', href: '/minis', className: 'portfolio-card--graphite' },
+  { label: 'Vitae', href: '/vitae', className: 'portfolio-card--graphite' },
 ];
+
+const tags = ['Calm', 'Curious', 'Modern', 'Human'];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f7f6f2] px-5 py-10 text-black sm:px-10 sm:py-14">
+    <main className="min-h-screen bg-[#efe3ca] px-5 py-10 text-[#2e2e2e] sm:px-10 sm:py-14">
       <CustomCursor />
       <ContactButton link="contact" visible={true} />
 
-      <header className="mx-auto flex max-w-7xl items-center justify-between text-[11px] font-bold uppercase tracking-[0.22em] sm:text-xs">
-        <Link className="cursor-none" href="/" aria-label="Nils Müller home">
-          N/M
+      <header className="mx-auto flex max-w-4xl items-center justify-between text-sm tracking-[-0.03em] sm:text-base">
+        <Link className="cursor-none font-medium" href="/" aria-label="Nils Müller home">
+          @nils.muller
         </Link>
-        <span>Portfolio / 2024</span>
+        <div className="flex items-center gap-4 text-2xl leading-none" aria-label="Favorites and bookmarks">
+          <span aria-hidden="true">♡</span>
+          <span aria-hidden="true">♧</span>
+        </div>
       </header>
 
-      <section className="mx-auto flex min-h-[calc(100vh-7rem)] max-w-7xl flex-col items-center justify-center gap-12 sm:min-h-[calc(100vh-9rem)] sm:gap-16">
-        <div className="text-center">
-          <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.35em] text-black/50">Selected work</p>
-          <h1 className="text-5xl font-black tracking-[-0.07em] sm:text-8xl md:text-9xl">Nils Müller</h1>
+      <section className="mx-auto flex min-h-[calc(100vh-8rem)] max-w-4xl flex-col justify-center gap-7 py-10 sm:gap-9">
+        <div className="portfolio-hero portfolio-hero--lavender">
+          <span className="portfolio-arrow" aria-hidden="true">
+            ↗
+          </span>
+          <h1>
+            Developer <span className="portfolio-slash">/</span> Photographer
+          </h1>
+          <span className="portfolio-code">HEX #92A9E1</span>
         </div>
 
-        <nav aria-label="Portfolio sections" className="portfolio-cards w-full max-w-2xl">
+        <div className="portfolio-hero portfolio-hero--graphite">
+          <span className="portfolio-arrow portfolio-arrow--left" aria-hidden="true">
+            ↙
+          </span>
+          <h2>
+            Minis <span className="portfolio-slash">/</span> Vitae
+          </h2>
+          <span className="portfolio-code">SELECTED WORK</span>
+        </div>
+
+        <nav aria-label="Portfolio sections" className="portfolio-links">
           {destinations.map((destination, index) => (
-            <Link
-              key={destination.label}
-              href={destination.href}
-              className={`portfolio-card ${destination.className} portfolio-card--${index + 1} cursor-none`}
-            >
-              <span className="text-3xl font-medium tracking-[-0.06em] sm:text-5xl">{destination.label}</span>
-              <span className="text-[10px] font-bold uppercase tracking-[0.24em] opacity-70">
-                0{index + 1} / Explore
-              </span>
+            <Link key={destination.label} href={destination.href} className="portfolio-link cursor-none">
+              {destination.label}
+              <span>0{index + 1}</span>
             </Link>
           ))}
         </nav>
 
-        <p className="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-black/60">
-          Ideas, images, and interfaces
+        <div className="portfolio-tags" aria-label="Design qualities">
+          {tags.map(tag => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
+
+        <p className="portfolio-best-for">
+          <strong>Best for:</strong> <span>●</span> people with ideas <span>●</span> curious collaborators{' '}
+          <span>●</span> good work
         </p>
       </section>
     </main>
