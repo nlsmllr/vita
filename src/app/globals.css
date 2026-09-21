@@ -29,11 +29,81 @@ body::-webkit-scrollbar {
 
 body {
   color: rgb(var(--foreground-rgb));
-  /* cursor:
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="64"><text y="50%" font-size="60">👌</text></svg>')
-      16 16,
-    auto; */
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background: #f7f6f2;
+}
+
+.portfolio-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0 2rem;
+}
+
+.portfolio-card {
+  position: relative;
+  z-index: var(--card-layer);
+  display: flex;
+  width: min(100%, 38rem);
+  min-height: 7.5rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.35rem;
+  border: 1px solid rgb(0 0 0 / 0.05);
+  border-radius: 2rem;
+  padding: 1.4rem 2rem;
+  box-shadow: 0 0.8rem 1.5rem rgb(0 0 0 / 0.08);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.portfolio-card:hover,
+.portfolio-card:focus-visible {
+  z-index: 10;
+  transform: translateX(1.5rem) rotate(0deg) scale(1.02);
+  box-shadow: 0 1.2rem 2rem rgb(0 0 0 / 0.14);
+  outline: none;
+}
+
+.portfolio-card--paper {
+  --card-layer: 4;
+  background: #f6f4f1;
+  transform: rotate(-4deg);
+}
+
+.portfolio-card--stone {
+  --card-layer: 3;
+  background: #e4ded2;
+  transform: translateY(-0.75rem) rotate(3deg);
+}
+
+.portfolio-card--coral {
+  --card-layer: 2;
+  background: #f95c4b;
+  color: white;
+  transform: translateY(-1.5rem) rotate(0.5deg);
+}
+
+.portfolio-card--black {
+  --card-layer: 1;
+  background: #050505;
+  color: white;
+  transform: translateY(-2.25rem) rotate(5deg);
+}
+
+@media (max-width: 640px) {
+  .fade-out-label {
+    display: none;
+  }
+
+  .portfolio-card {
+    min-height: 6.5rem;
+    border-radius: 1.5rem;
+    padding: 1.15rem 1.35rem;
+  }
+
+  .portfolio-card:hover,
+  .portfolio-card:focus-visible {
+    transform: translateX(0.5rem) rotate(0deg) scale(1.01);
+  }
 }
 
 /* Hide scrollbar but allow scrolling */
