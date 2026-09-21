@@ -46,9 +46,7 @@ export default function Home() {
           <div className="my-7 flex cursor-none flex-col space-x-[69px] text-3xl font-bold tracking-wide sm:my-0 sm:flex-row sm:text-4xl">
             <Link
               className={`cursor-none md:transition-all md:duration-300 md:hover:blur-sm ${
-                colorChange
-                  ? 'text-[#ff0080] duration-100 md:animate-bounce'
-                  : 'text-black duration-100'
+                colorChange ? 'text-[#ff0080] duration-100 md:animate-bounce' : 'text-black duration-100'
               }`}
               href={'/dev'}
             >
@@ -56,9 +54,7 @@ export default function Home() {
             </Link>
             <Link
               className={`cursor-none md:transition-all md:duration-300 md:hover:blur-sm ${
-                colorChange
-                  ? 'text-[#ff0080] duration-100 md:animate-bounce'
-                  : 'text-black duration-100'
+                colorChange ? 'text-[#ff0080] duration-100 md:animate-bounce' : 'text-black duration-100'
               }`}
               href={'/photo'}
             >
