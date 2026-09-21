@@ -54,9 +54,15 @@ export default function Home() {
           </Link>
         </div>
         <nav aria-label="Explore portfolio" className="landing-nav flex cursor-none flex-col items-center gap-4 text-center sm:flex-row sm:gap-10">
-          <Link className={linkClass('/dev')} href={'/dev'}>Developer</Link>
-          <Link className={linkClass('/photo')} href={'/photo'}>Photographer</Link>
-          <Link className={linkClass('/minis')} href={'/minis'}>Minis</Link>
+          <Link className={linkClass('/dev')} href={'/dev'}>
+            Developer
+          </Link>
+          <Link className={linkClass('/photo')} href={'/photo'}>
+            Photographer
+          </Link>
+          <Link className={linkClass('/minis')} href={'/minis'}>
+            Minis
+          </Link>
         </nav>
         <p className="landing-note">Designing, documenting, and making things with intent.</p>
       </div>
