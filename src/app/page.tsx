@@ -45,20 +45,20 @@ export default function Home() {
         <div className="flex flex-col items-center">
           <div className="my-7 flex cursor-none flex-col space-x-[69px] text-3xl font-bold tracking-wide sm:my-0 sm:flex-row sm:text-4xl">
             <Link
-              className={`cursor-none md:blur-sm md:transition-all md:duration-300 md:hover:blur-0 ${
+              className={`cursor-none md:transition-all md:duration-300 md:hover:blur-sm ${
                 colorChange
-                  ? 'text-[#ff0080] duration-100 md:animate-bounce md:blur-0'
-                  : 'text-black duration-100 md:blur-sm'
+                  ? 'text-[#ff0080] duration-100 md:animate-bounce'
+                  : 'text-black duration-100'
               }`}
               href={'/dev'}
             >
               Developer
             </Link>
             <Link
-              className={`cursor-none md:blur-sm md:transition-all md:duration-300 md:hover:blur-0 ${
+              className={`cursor-none md:transition-all md:duration-300 md:hover:blur-sm ${
                 colorChange
-                  ? 'text-[#ff0080] duration-100 md:animate-bounce md:blur-0'
-                  : 'text-black duration-100 md:blur-sm'
+                  ? 'text-[#ff0080] duration-100 md:animate-bounce'
+                  : 'text-black duration-100'
               }`}
               href={'/photo'}
             >
