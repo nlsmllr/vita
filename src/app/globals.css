@@ -32,6 +32,205 @@ body {
   background: #efe3ca;
 }
 
+.geometric-header,
+.geometric-footer {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100%, 72rem);
+  margin: 0 auto;
+  font-size: 0.8rem;
+  letter-spacing: -0.03em;
+}
+
+.geometric-header {
+  padding: 0 0.25rem;
+}
+
+.geometric-header__icons {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.geometric-layout {
+  position: relative;
+  display: flex;
+  width: min(100%, 72rem);
+  min-height: calc(100vh - 10rem);
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 3rem 0;
+}
+
+.geometric-band {
+  position: relative;
+  display: flex;
+  min-height: 10rem;
+  align-items: center;
+  padding: 2rem clamp(1.25rem, 7vw, 6rem);
+  overflow: hidden;
+  border: 1px solid #2e2e2e;
+  font-size: clamp(2.5rem, 7vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.geometric-band::after {
+  position: absolute;
+  right: -8%;
+  bottom: -50%;
+  width: 48%;
+  height: 130%;
+  background: #efe3ca;
+  content: '';
+  opacity: 0.3;
+  transform: rotate(-45deg);
+}
+
+.geometric-band p,
+.geometric-band__link,
+.geometric-band span {
+  position: relative;
+  z-index: 1;
+}
+
+.geometric-band p {
+  margin: 0;
+}
+
+.geometric-band span {
+  align-self: flex-end;
+  margin-left: auto;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  opacity: 0.8;
+}
+
+.geometric-band--beige {
+  min-height: 8rem;
+  justify-content: flex-start;
+  border-radius: 2rem 2rem 0 0;
+  background: #efe3ca;
+  color: #2e2e2e;
+}
+
+.geometric-band--beige span {
+  position: absolute;
+  top: 1rem;
+  left: clamp(1.25rem, 7vw, 6rem);
+}
+
+.geometric-band--lavender {
+  z-index: 2;
+  min-height: 19rem;
+  justify-content: space-between;
+  gap: 2rem;
+  background: #92a9e1;
+  color: #2e2e2e;
+  transform: skewY(-4deg);
+}
+
+.geometric-band--lavender > * {
+  transform: skewY(4deg);
+}
+
+.geometric-band--lavender .geometric-band__link:last-of-type {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.geometric-band--graphite {
+  z-index: 3;
+  min-height: 17rem;
+  justify-content: space-between;
+  gap: 2rem;
+  border-radius: 0 0 2rem 2rem;
+  background: #2e2e2e;
+  color: #92a9e1;
+  transform: skewY(-4deg);
+}
+
+.geometric-band--graphite > * {
+  transform: skewY(4deg);
+}
+
+.geometric-mark {
+  position: absolute;
+  top: 46%;
+  right: 1.5rem;
+  z-index: 5;
+  display: grid;
+  size: 4.5rem;
+  place-items: center;
+  border: 1px solid #2e2e2e;
+  border-radius: 1.25rem;
+  background: #92a9e1;
+  font-size: 2rem;
+}
+
+.geometric-footer {
+  gap: 1rem;
+  padding: 0 0.25rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 640px) {
+  .geometric-layout {
+    min-height: calc(100vh - 8rem);
+    padding: 2.5rem 0;
+  }
+
+  .geometric-band {
+    min-height: 9rem;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .geometric-band--beige {
+    min-height: 7rem;
+  }
+
+  .geometric-band--lavender {
+    min-height: 15rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .geometric-band--lavender .geometric-band__link:last-of-type {
+    align-self: flex-end;
+  }
+
+  .geometric-band--graphite {
+    min-height: 14rem;
+  }
+
+  .geometric-band span {
+    font-size: 0.6rem;
+  }
+
+  .geometric-mark {
+    right: 0.75rem;
+    size: 3.5rem;
+    border-radius: 1rem;
+  }
+
+  .geometric-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 .portfolio-hero {
   position: relative;
   display: flex;
