@@ -3,9 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 38, 25, 50;
+  --background-start-rgb: 250, 247, 255;
+  --background-end-rgb: 250, 247, 255;
+  --lavender-ink: #261932;
+  --lavender-pale: #faf7ff;
+  --lavender-soft: #d9c4f2;
+  --lavender-vivid: #9d61d6;
+  --lavender-deep: #39204f;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,11 +34,103 @@ body::-webkit-scrollbar {
 
 body {
   color: rgb(var(--foreground-rgb));
-  /* cursor:
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="64"><text y="50%" font-size="60">👌</text></svg>')
-      16 16,
-    auto; */
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background: var(--lavender-pale);
+}
+
+.landing-page {
+  isolation: isolate;
+  background: var(--lavender-pale);
+}
+
+.landing-shape {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.landing-shape-light {
+  background: var(--lavender-pale);
+  clip-path: polygon(0 0, 62% 0, 0 62%);
+}
+
+.landing-shape-mid {
+  background: var(--lavender-vivid);
+  clip-path: polygon(62% 0, 100% 0, 100% 38%, 38% 100%, 0 100%, 0 62%);
+}
+
+.landing-shape-dark {
+  background: var(--lavender-deep);
+  clip-path: polygon(100% 38%, 100% 100%, 38% 100%);
+}
+
+.landing-intro,
+.landing-nav,
+.landing-note {
+  text-shadow: 0 1px 0 rgb(255 255 255 / 12%);
+}
+
+.landing-kicker,
+.landing-note {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.landing-kicker {
+  margin-bottom: 0.8rem;
+  color: var(--lavender-vivid);
+  text-align: center;
+}
+
+.landing-title {
+  font-size: clamp(3.6rem, 12vw, 9rem);
+  line-height: 0.9;
+}
+
+.landing-nav {
+  margin-top: 2rem;
+  font-size: clamp(1.35rem, 3vw, 2.35rem);
+  font-weight: 800;
+}
+
+.landing-link {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.16em;
+  transition: color 180ms ease, text-decoration-color 180ms ease, transform 180ms ease;
+}
+
+.landing-link:hover,
+.landing-link:focus-visible {
+  color: var(--lavender-pale);
+  text-decoration-color: var(--lavender-pale);
+  transform: translateY(-0.15em);
+}
+
+.landing-link.is-changing {
+  color: var(--lavender-soft);
+}
+
+.landing-note {
+  max-width: 24rem;
+  margin-top: 2.5rem;
+  color: var(--lavender-soft);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .landing-shape-light {
+    clip-path: polygon(0 0, 100% 0, 0 44%);
+  }
+
+  .landing-shape-mid {
+    clip-path: polygon(100% 0, 100% 57%, 43% 100%, 0 100%, 0 44%);
+  }
+
+  .landing-shape-dark {
+    clip-path: polygon(100% 57%, 100% 100%, 43% 100%);
+  }
 }
 
 /* Hide scrollbar but allow scrolling */
@@ -55,8 +152,8 @@ body {
 .dotPulse {
   aspect-ratio: 1;
   border-radius: 50%;
-  background: #ff0080;
-  box-shadow: 0 0 0 0 #ff00804b;
+  background: var(--lavender-soft);
+  box-shadow: 0 0 0 0 rgb(217 196 242 / 30%);
   animation: l2 1.5s infinite linear;
   position: relative;
 }
@@ -66,7 +163,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: 0 0 0 0 #ff00804b;
+  box-shadow: 0 0 0 0 rgb(217 196 242 / 30%);
   animation: inherit;
   animation-delay: -0.5s;
 }

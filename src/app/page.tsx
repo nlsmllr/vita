@@ -34,48 +34,37 @@ export default function Home() {
     };
   }, [colorChange]);
 
+  const linkClass = (path: string) =>
+    `landing-link cursor-none md:transition-all md:duration-300 ${
+      colorChange ? 'is-changing md:animate-bounce' : ''
+    }`;
+
   return (
-    <main className="flex justify-center">
-      <div className="mx-auto mt-72 flex h-auto cursor-none flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
+    <main className="landing-page flex min-h-screen justify-center overflow-hidden">
+      <div className="landing-shape landing-shape-light" aria-hidden="true" />
+      <div className="landing-shape landing-shape-mid" aria-hidden="true" />
+      <div className="landing-shape landing-shape-dark" aria-hidden="true" />
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl cursor-none flex-col items-center justify-center px-6 py-32 uppercase text-[var(--lavender-ink)] sm:justify-evenly sm:px-10 sm:py-16">
         <CustomCursor />
         <ContactButton link={'contact'} visible={true} />
-        <Link className="cursor-none" href={'/'}>
-          <h1 className="text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>
-        </Link>
-        <div className="flex flex-col items-center">
-          <div className="my-7 flex cursor-none flex-col space-x-[69px] text-3xl font-bold tracking-wide sm:my-0 sm:flex-row sm:text-4xl">
-            <Link
-              className={`cursor-none md:blur-sm md:transition-all md:duration-300 md:hover:blur-0 ${
-                colorChange
-                  ? 'text-[#ff0080] duration-100 md:animate-bounce md:blur-0'
-                  : 'text-black duration-100 md:blur-sm'
-              }`}
-              href={'/dev'}
-            >
-              Developer
-            </Link>
-            <Link
-              className={`cursor-none md:blur-sm md:transition-all md:duration-300 md:hover:blur-0 ${
-                colorChange
-                  ? 'text-[#ff0080] duration-100 md:animate-bounce md:blur-0'
-                  : 'text-black duration-100 md:blur-sm'
-              }`}
-              href={'/photo'}
-            >
-              Photographer
-            </Link>
-            <Link
-              className={`cursor-none md:blur-sm md:transition-all md:duration-300 md:hover:blur-0 ${
-                colorChange
-                  ? 'text-[#ff0080] duration-100 md:animate-bounce md:blur-0'
-                  : 'text-black duration-100 md:blur-sm'
-              }`}
-              href={'/minis'}
-            >
-              Minis
-            </Link>
-          </div>
+        <div className="landing-intro">
+          <p className="landing-kicker">A collection of work</p>
+          <Link className="cursor-none" href={'/'}>
+            <h1 className="landing-title text-center font-black tracking-[-0.06em]">Nils Müller</h1>
+          </Link>
         </div>
+        <nav aria-label="Explore portfolio" className="landing-nav flex cursor-none flex-col items-center gap-4 text-center sm:flex-row sm:gap-10">
+          <Link className={linkClass('/dev')} href={'/dev'}>
+            Developer
+          </Link>
+          <Link className={linkClass('/photo')} href={'/photo'}>
+            Photographer
+          </Link>
+          <Link className={linkClass('/minis')} href={'/minis'}>
+            Minis
+          </Link>
+        </nav>
+        <p className="landing-note">Designing, documenting, and making things with intent.</p>
       </div>
     </main>
   );
