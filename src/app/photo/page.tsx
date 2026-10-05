@@ -8,11 +8,6 @@ import { ContactButton } from '../ComponentsPhoto/ContactButton';
 import CustomCursor from '../ComponentsPhoto/CustomCursor';
 import { imageFilenames } from '../Constants/photos';
 
-// Note: If you are using the Next.js App Router, 'force-dynamic' can only be 
-// exported from a Server Component. You may need to move it to your page.tsx 
-// and import this file as a client component if you encounter a build error.
-export const dynamic = 'force-dynamic';
-
 export default function Photo() {
   const [lightboxImage, setLightboxImage] = useState(null);
 
@@ -79,8 +74,8 @@ export default function Photo() {
           {imageFilenames.map((filename, index) => (
             <div
               key={index}
-              className="relative col-span-2 cursor-pointer" // Added cursor-pointer
-              onClick={() => setLightboxImage(filename)} // Trigger lightbox
+              className="relative col-span-2 cursor-pointer"
+              onClick={() => setLightboxImage(filename)}
               style={{
                 marginTop:
                   index % 2 === 0 ? `max(20px, ${Math.random() * 200}px)` : `max(50px, ${Math.random() * 200 + 50}px)`,
@@ -96,7 +91,6 @@ export default function Photo() {
                 className="w-full object-cover transition md:duration-200"
                 aria-label={`Photography work ${index + 1}`}
                 tabIndex={0}
-                // Allow Enter key to open lightbox for accessibility
                 onKeyDown={(e) => {
                   if (e.key === 'Enter') setLightboxImage(filename);
                 }}
