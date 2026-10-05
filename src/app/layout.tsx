@@ -17,6 +17,16 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: 'Nils Müller',
   description: 'Welcome to my CV',
+  icons: {
+    // Apple specific icons
+    apple: [
+      {
+        url: '/apple-icon.png',
+        sizes: '250x250',
+        type: 'image/png',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
