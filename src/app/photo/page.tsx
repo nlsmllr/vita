@@ -1,21 +1,47 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 import { ContactButton } from '../ComponentsPhoto/ContactButton';
 import CustomCursor from '../ComponentsPhoto/CustomCursor';
 import { imageFilenames } from '../Constants/photos';
 
 export default function Photo() {
-  const [lightboxImage, setLightboxImage] = useState(null);
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
-  // Handle the Escape key to close the lightbox
+  // State to hold our randomized margins so they only calculate ONCE
+  const [randomMargins, setRandomMargins] = useState<string[]>([]);
+
+  // 1. Generate random margins on mount
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const generatedMargins = imageFilenames.map((_, index) =>
+      index % 2 === 0 ? `max(20px, ${Math.random() * 200}px)` : `max(50px, ${Math.random() * 200 + 50}px)`,
+    );
+    setRandomMargins(generatedMargins);
+  }, []);
+
+  // 2. Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!lightboxImage) return;
+
+      const currentIndex = imageFilenames.indexOf(lightboxImage);
+      if (currentIndex === -1) return;
+
       if (e.key === 'Escape') {
+        e.preventDefault();
         setLightboxImage(null);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        const nextIndex = (currentIndex + 1) % imageFilenames.length;
+        setLightboxImage(imageFilenames[nextIndex]);
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const prevIndex = (currentIndex - 1 + imageFilenames.length) % imageFilenames.length;
+        setLightboxImage(imageFilenames[prevIndex]);
       }
     };
 
@@ -28,28 +54,72 @@ export default function Photo() {
     };
   }, [lightboxImage]);
 
+  // 3. Handle mobile swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null || !lightboxImage) return;
+
+    const touchEndX = e.changedTouches[0].clientX;
+    const swipeDistance = touchStartX - touchEndX;
+    const currentIndex = imageFilenames.indexOf(lightboxImage);
+
+    if (Math.abs(swipeDistance) > 50) {
+      if (swipeDistance > 0) {
+        const nextIndex = (currentIndex + 1) % imageFilenames.length;
+        setLightboxImage(imageFilenames[nextIndex]);
+      } else {
+        const prevIndex = (currentIndex - 1 + imageFilenames.length) % imageFilenames.length;
+        setLightboxImage(imageFilenames[prevIndex]);
+      }
+    }
+
+    setTouchStartX(null);
+  };
+
   return (
     <div className="relative h-auto w-screen cursor-none bg-white pb-10 text-black">
       <CustomCursor />
+
       <ContactButton link={'contact'} visible={false} />
 
       {/* --- Lightbox Overlay --- */}
       {lightboxImage && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4 sm:p-10"
-          onClick={() => setLightboxImage(null)} // Click background to close
+          className="fixed inset-0 z-[100] flex touch-none items-center justify-center bg-black/85 p-4 sm:p-10"
+          onClick={() => setLightboxImage(null)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
-          <div 
-            className="relative flex h-full w-full items-center justify-center cursor-auto"
-            onClick={(e) => e.stopPropagation()} // Prevent clicking the image from closing the lightbox
-          >
-            <Image
-              src={`/images/${lightboxImage}`}
-              alt="Lightbox View"
-              width={2500}
-              height={2500}
-              className="max-h-full max-w-full object-contain"
-            />
+          {/* Added flex centering here so the images sit perfectly in the middle */}
+          <div className="relative flex h-full w-full cursor-none items-center justify-center">
+            {imageFilenames.map(filename => {
+              const isActive = lightboxImage === filename;
+              return (
+                <div
+                  key={filename}
+                  className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ease-in-out ${
+                    isActive ? 'z-10 opacity-100' : 'pointer-events-none z-0 opacity-0'
+                  }`}
+                  // We do NOT stop propagation here, so clicking the empty space bubbles up to close it!
+                >
+                  <Image
+                    src={`/images/${filename}`}
+                    alt="Lightbox View"
+                    // Switched back to fixed sizes so the image's invisible hit-box hugs the photo
+                    width={2500}
+                    height={2500}
+                    priority={isActive}
+                    className="max-h-full max-w-full select-none object-contain"
+                    draggable={false}
+                    // Only clicking the actual photo pixels prevents it from closing
+                    onClick={e => e.stopPropagation()}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
@@ -74,11 +144,10 @@ export default function Photo() {
           {imageFilenames.map((filename, index) => (
             <div
               key={index}
-              className="relative col-span-2 cursor-pointer"
+              className="relative col-span-2 cursor-none"
               onClick={() => setLightboxImage(filename)}
               style={{
-                marginTop:
-                  index % 2 === 0 ? `max(20px, ${Math.random() * 200}px)` : `max(50px, ${Math.random() * 200 + 50}px)`,
+                marginTop: randomMargins[index] || (index % 2 === 0 ? '20px' : '50px'),
                 marginLeft: '-10%',
                 zIndex: imageFilenames.length - index,
               }}
@@ -91,7 +160,7 @@ export default function Photo() {
                 className="w-full object-cover transition md:duration-200"
                 aria-label={`Photography work ${index + 1}`}
                 tabIndex={0}
-                onKeyDown={(e) => {
+                onKeyDown={e => {
                   if (e.key === 'Enter') setLightboxImage(filename);
                 }}
               />
