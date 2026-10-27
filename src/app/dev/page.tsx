@@ -21,12 +21,17 @@ export default function Home() {
   };
 
   return (
-    <div className="relative h-[85vh] cursor-auto overflow-hidden scroll-auto sm:h-screen">
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center font-bold text-zinc-800">
-        <h1 className="text-5xl">Oops!</h1>
+    <div className="relative h-[85vh] cursor-auto overflow-hidden scroll-auto bg-paper text-ink sm:h-screen">
+      <div className="bg-grid absolute inset-0 z-10 flex flex-col items-center justify-center text-center">
+        <h1 className="font-wide text-[clamp(3rem,14vw,12rem)] font-black uppercase leading-none tracking-[-0.045em]">
+          Oops.
+        </h1>
         {!isVisible && (
           <>
-            <button onClick={handleOpen} className="mt-5 rounded-lg bg-zinc-200 p-3 px-5 text-xl hover:shadow-lg">
+            <button
+              onClick={handleOpen}
+              className="mt-8 border-2 border-ink bg-paper px-6 py-3 font-mono text-sm uppercase shadow-hard-sm transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-accent hover:text-paper hover:shadow-none"
+            >
               Hey, come back here!
             </button>
           </>

@@ -23,15 +23,17 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ link, visible }) =
   }, [visible]);
 
   return (
-    <div className="fixed -right-[120px] -top-[120px] z-30 text-center uppercase">
+    <div className="fixed -right-[120px] -top-[120px] z-50 text-center uppercase">
       <Link href={`/${link}`} aria-label="Contact Button, come and say hi" className="block h-60 w-60 cursor-none">
         <div className="relative flex h-full w-full items-center justify-center">
-          <div className="dotPulse relative h-20 w-20 transition duration-100 sm:hover:blur-sm" />
+          <div className="dotPulse relative h-16 w-16 transition-transform duration-300 hover:rotate-45" />
         </div>
       </Link>
       {showLabel && (
         <div className="fade-out-label absolute right-28 top-44 -z-10 flex -translate-y-1/2 scale-75 transform items-center transition-all sm:right-36 sm:top-48 sm:scale-100">
-          <span className="-z-10 -mr-5 pt-16 text-xl font-black tracking-wide text-black sm:-mr-4">Get in Touch</span>
+          <span className="-z-10 -mr-5 pt-16 font-mono text-sm font-bold tracking-wide text-ink sm:-mr-4">
+            [ Get in Touch ]
+          </span>
           <svg className="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3" width="200" height="150">
             <g data-name="Layer_1">
               <path

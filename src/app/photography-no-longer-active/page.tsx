@@ -5,17 +5,23 @@ import CustomCursor from '../ComponentsPhoto/CustomCursor';
 
 export default function Photographer() {
   return (
-    <main className="mx-auto mt-72 flex h-auto cursor-none flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
+    <main className="flex min-h-[100svh] cursor-none flex-col bg-paper text-ink">
       <CustomCursor />
       <ContactButton link={'contact'} visible={true} />
-      <Link className="cursor-none" href={'/'}>
-        <h1 className="text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>
-      </Link>
-      <div className="my-7 flex cursor-none flex-col space-x-[70px] text-3xl font-bold tracking-wide sm:my-0 sm:flex-row sm:text-4xl">
-        <Link className="cursor-none md:blur-sm md:transition-all md:duration-300 md:hover:blur-0" href={'/'}>
-          Coming soon 💦
+      <section className="bg-grid flex flex-1 flex-col justify-end border-b-2 border-ink px-4 pb-4 pt-20">
+        <p className="mb-6 font-mono text-xs uppercase">[ Photography ]</p>
+        <Link className="cursor-none" href={'/'}>
+          <h1 className="font-wide text-[clamp(3.5rem,17.5vw,19rem)] font-black uppercase leading-[0.9] tracking-[-0.045em]">
+            Soon.
+          </h1>
         </Link>
-      </div>
+      </section>
+      <Link
+        className="cursor-none p-4 font-mono text-sm uppercase transition-colors hover:bg-accent hover:text-paper"
+        href={'/'}
+      >
+        Back home
+      </Link>
     </main>
   );
 }

@@ -3,18 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+  --paper: 242 240 235;
+  --ink: 10 10 10;
+  --accent: 255 0 128;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 255, 255, 255;
-    --background-end-rgb: 255, 255, 255;
-  }
-}
 html,
 body {
   scrollbar-width: none;
@@ -28,12 +21,13 @@ body::-webkit-scrollbar {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  /* cursor:
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="64"><text y="50%" font-size="60">👌</text></svg>')
-      16 16,
-    auto; */
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  color: rgb(var(--ink));
+  background: rgb(var(--paper));
+}
+
+::selection {
+  background: rgb(var(--accent));
+  color: rgb(var(--paper));
 }
 
 /* Hide scrollbar but allow scrolling */
@@ -50,13 +44,34 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgb(var(--ink) / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--ink) / 0.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .font-wide {
+    font-stretch: 125%;
+  }
+}
+
+.link {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 150ms;
+}
+
+.link:hover {
+  color: rgb(var(--accent));
 }
 
 .dotPulse {
   aspect-ratio: 1;
-  border-radius: 50%;
-  background: #ff0080;
-  box-shadow: 0 0 0 0 #ff00804b;
+  background: rgb(var(--accent));
+  box-shadow: 0 0 0 0 rgb(var(--accent) / 0.3);
   animation: l2 1.5s infinite linear;
   position: relative;
 }
@@ -65,8 +80,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: inherit;
-  box-shadow: 0 0 0 0 #ff00804b;
+  box-shadow: 0 0 0 0 rgb(var(--accent) / 0.3);
   animation: inherit;
   animation-delay: -0.5s;
 }

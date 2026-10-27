@@ -11,7 +11,7 @@ interface Props {
 
 export const Content = ({ color }: Props) => {
   return (
-    <div className={`text-s cursor-none pt-6 font-mono leading-5 text-${color}`}>
+    <div className={`cursor-none pt-6 font-mono text-sm leading-6 text-${color}`}>
       <nav className="items-center pb-12 text-center font-mono sm:flex sm:flex-row sm:justify-between">
         <h1 className="font-thin">
           <Link href="/" className="link cursor-none">

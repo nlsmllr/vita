@@ -80,7 +80,7 @@ export default function Photo() {
   };
 
   return (
-    <div className="relative h-auto w-screen cursor-none bg-white pb-10 text-black">
+    <div className="relative h-auto w-screen cursor-none bg-paper pb-10 text-ink">
       <CustomCursor />
 
       <ContactButton link={'contact'} visible={false} />
@@ -88,11 +88,18 @@ export default function Photo() {
       {/* --- Lightbox Overlay --- */}
       {lightboxImage && (
         <div
-          className="fixed inset-0 z-[100] flex touch-none items-center justify-center bg-black/85 p-4 sm:p-10"
+          className="fixed inset-0 z-[100] flex touch-none items-center justify-center bg-ink/95 p-4 pt-14 sm:p-10 sm:pt-16"
           onClick={() => setLightboxImage(null)}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
+          <div className="absolute inset-x-0 top-0 z-20 flex justify-between border-b-2 border-paper/20 bg-ink px-4 py-3 font-mono text-xs uppercase text-paper">
+            <span>
+              <span className="text-accent">{String(imageFilenames.indexOf(lightboxImage) + 1).padStart(2, '0')}</span>{' '}
+              / {String(imageFilenames.length).padStart(2, '0')}
+            </span>
+            <span>Esc / Close</span>
+          </div>
           {/* Added flex centering here so the images sit perfectly in the middle */}
           <div className="relative flex h-full w-full cursor-none items-center justify-center">
             {imageFilenames.map(filename => {
@@ -126,17 +133,21 @@ export default function Photo() {
       {/* ------------------------ */}
 
       <div className="flex h-[75vh] w-screen items-end justify-center">
-        <div className="text-md z-10 font-light uppercase tracking-widest text-zinc-950">scroll down</div>
+        <div className="z-10 font-mono text-xs uppercase">[ Scroll ]</div>
       </div>
       <div
         className="fixed left-0 top-0 z-10 h-[74vh] w-full"
         style={{
-          backgroundImage: 'linear-gradient(to bottom, white, white 74%, transparent 100%)',
+          backgroundImage: 'linear-gradient(to bottom, rgb(var(--paper)), rgb(var(--paper)) 74%, transparent 100%)',
         }}
       ></div>
       <section className="fixed inset-0 z-10 flex h-screen items-center justify-center">
-        <Link className="mx-auto flex cursor-none flex-col items-center justify-center uppercase text-black" href={'/'}>
-          <h1 className="-mt-10 text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>
+        <Link className="mx-auto flex cursor-none flex-col items-center justify-center uppercase" href={'/'}>
+          <h1 className="font-wide -mt-10 text-center text-[clamp(3rem,12vw,13rem)] font-black leading-[0.9] tracking-[-0.045em]">
+            Nils
+            <br />
+            Müller
+          </h1>
         </Link>
       </section>
       <section className="relative z-20 mt-[700px] cursor-none pb-[0px] sm:mx-40">
@@ -157,15 +168,15 @@ export default function Photo() {
                 alt={`Image ${index + 1}`}
                 width={2500}
                 height={2500}
-                className="w-full object-cover transition md:duration-200"
+                className="w-full border-2 border-ink object-cover transition md:duration-200 md:hover:shadow-hard"
                 aria-label={`Photography work ${index + 1}`}
                 tabIndex={0}
                 onKeyDown={e => {
                   if (e.key === 'Enter') setLightboxImage(filename);
                 }}
               />
-              <p className="absolute -right-8 top-0 text-xl text-[#ff0080] contrast-more:text-[#883860]">
-                {String(index + 1).padStart(2, '0')}
+              <p className="absolute -right-10 top-0 font-mono text-xs text-accent contrast-more:text-[#883860]">
+                [{String(index + 1).padStart(2, '0')}]
               </p>
             </div>
           ))}

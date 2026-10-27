@@ -9,45 +9,44 @@ export default function CustomCursor() {
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
-      if (!isCursorVisible) {
-        setIsCursorVisible(true);
-      }
+      setIsCursorVisible(true);
 
       if (cursorRef.current) {
-        cursorRef.current.style.left = `${event.clientX}px`;
-        cursorRef.current.style.top = `${event.clientY}px`;
+        cursorRef.current.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%)`;
       }
     };
 
-    const handleMouseEnterLink = () => setIsHoveringLink(true);
-    const handleMouseLeaveLink = () => setIsHoveringLink(false);
+    // Delegated, so links rendered after mount (e.g. lightbox, terminal output) are picked up too
+    const handleMouseOver = (event: MouseEvent) => {
+      const target = event.target as Element | null;
+      setIsHoveringLink(Boolean(target?.closest('a, button, img')));
+    };
+
+    const handleMouseLeave = () => setIsCursorVisible(false);
 
     document.addEventListener('mousemove', handleMouseMove);
-    document.querySelectorAll('a').forEach(link => {
-      link.addEventListener('mouseenter', handleMouseEnterLink);
-      link.addEventListener('mouseleave', handleMouseLeaveLink);
-    });
+    document.addEventListener('mouseover', handleMouseOver);
+    document.documentElement.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
-      document.querySelectorAll('a').forEach(link => {
-        link.removeEventListener('mouseenter', handleMouseEnterLink);
-        link.removeEventListener('mouseleave', handleMouseLeaveLink);
-      });
+      document.removeEventListener('mouseover', handleMouseOver);
+      document.documentElement.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [isCursorVisible]);
+  }, []);
 
   return (
     <div
       ref={cursorRef}
-      className={`pointer-events-none fixed z-[999] cursor-none rounded-full mix-blend-difference transition-[width,height] duration-500 ease-in-out ${
+      className={`pointer-events-none fixed left-0 top-0 z-[999] mix-blend-difference transition-opacity duration-200 ${
         isCursorVisible ? 'opacity-100' : 'opacity-0'
-      } ${isHoveringLink ? 'h-16 w-16' : 'h-10 w-10'}`}
-      style={{
-        transform: 'translate(-50%, -50%)',
-        background: 'white',
-        mixBlendMode: 'difference',
-      }}
-    />
+      }`}
+    >
+      <div
+        className={`h-6 w-6 bg-white transition-transform duration-300 ease-out ${
+          isHoveringLink ? 'rotate-45 scale-[2.4]' : 'rotate-0 scale-100'
+        }`}
+      />
+    </div>
   );
 }
