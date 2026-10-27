@@ -3,25 +3,51 @@ import Link from 'next/link';
 import { ContactButton } from '../ComponentsPhoto/ContactButton';
 import CustomCursor from '../ComponentsPhoto/CustomCursor';
 
-export default function Photographer() {
+const channels = [
+  { label: 'E-Mail', value: 'info@nils-mueller.com', href: 'mailto:info@nils-mueller.com' },
+  { label: 'Phone', value: '+49 151 15776494', href: 'tel:+4915115776494' },
+  { label: 'LinkedIn', value: 'Nils Müller', href: 'https://www.linkedin.com/in/nils-m%C3%BCller-5ab765220/' },
+  { label: 'GitHub', value: '@nlsmllr', href: 'https://github.com/nlsmllr/' },
+  { label: 'Vitae', value: 'Read my CV', href: '/vitae' },
+];
+
+export default function Contact() {
   return (
-    <main className="mx-auto mt-72 flex h-auto w-screen cursor-none flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
+    <main className="flex min-h-[100svh] w-screen cursor-none flex-col bg-paper text-ink">
       <CustomCursor />
       <ContactButton link={''} visible={false} />
-      <Link className="cursor-none" href={'/'}>
-        <h1 className="text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>
-      </Link>
-      <div className="my-7 flex cursor-none flex-col text-center text-3xl font-bold tracking-wide sm:my-0 sm:flex-row sm:space-x-[30px] sm:text-4xl">
-        <Link href="mailto:info@nils-mueller.com" className="link cursor-none md:duration-300 md:hover:blur-sm">
-          info@nils-mueller.com
+
+      <section className="bg-grid border-b-2 border-ink px-4 pb-4 pt-20">
+        <p className="mb-6 font-mono text-xs uppercase">[ Contact ]</p>
+        <h1 className="font-wide text-[clamp(3.5rem,17.5vw,19rem)] font-black uppercase leading-[0.9] tracking-[-0.045em]">
+          Say hi.
+        </h1>
+      </section>
+
+      <ul>
+        {channels.map((channel, index) => (
+          <li key={channel.label} className="border-b-2 border-ink">
+            <Link
+              href={channel.href}
+              className="grid cursor-none grid-cols-1 items-baseline gap-x-4 gap-y-2 p-4 transition-colors duration-150 hover:bg-ink hover:text-paper sm:grid-cols-[10rem_1fr]"
+            >
+              <span className="font-mono text-xs uppercase">
+                [0{index + 1}] {channel.label}
+              </span>
+              <span className="break-all text-2xl font-black uppercase tracking-tight sm:text-5xl">
+                {channel.value}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+      <footer className="mt-auto flex justify-between p-4 font-mono text-xs uppercase">
+        <Link href="/Imprint" className="link cursor-none">
+          Imprint
         </Link>
-        <Link href="tel:+4915115776494" className="link cursor-none md:duration-300 md:hover:blur-sm">
-          +49 151 15776494
-        </Link>
-        <Link href="/vitae" className="link cursor-none md:duration-300 md:hover:blur-sm">
-          Vitae
-        </Link>
-      </div>
+        <span>Hamburg, DE</span>
+      </footer>
     </main>
   );
 }

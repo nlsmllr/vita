@@ -74,8 +74,8 @@ export const Terminal = () => {
   };
 
   return (
-    <div className="cursor-auto p-0 font-mono leading-5 text-white">
-      <div className="scrollbar-hide h-[69vh] w-full overflow-y-auto rounded-lg p-4 font-mono sm:h-full">
+    <div className="cursor-auto p-0 font-mono leading-5 text-paper">
+      <div className="scrollbar-hide h-[50vh] w-full overflow-y-auto p-4 font-mono">
         {commands.map((line, index) => (
           <pre key={index} className="whitespace-pre-wrap">
             {line === 'vita' ? <Content color="white" key={index} /> : line}
@@ -83,7 +83,7 @@ export const Terminal = () => {
         ))}
         <form className="mb-20" onSubmit={handleSubmit}>
           <label className="flex items-start">
-            <span className="mr-2">$</span>
+            <span className="mr-2 text-accent">$</span>
             <textarea
               value={input}
               onChange={e => setInput(e.target.value)}
@@ -93,7 +93,7 @@ export const Terminal = () => {
                   handleSubmit(e as unknown as React.FormEvent<HTMLFormElement>);
                 }
               }}
-              className="h-48 w-full resize-none items-start border-none bg-transparent font-mono outline-none"
+              className="h-48 w-full resize-none items-start border-none bg-transparent font-mono caret-accent outline-none"
             />
           </label>
         </form>

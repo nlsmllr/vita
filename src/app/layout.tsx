@@ -3,9 +3,10 @@ import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import type { Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Archivo, JetBrains_Mono } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const display = Archivo({ subsets: ['latin'], axes: ['wdth'], variable: '--font-display' });
+const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -36,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${display.variable} ${mono.variable} bg-paper font-display text-ink antialiased`}>
         {children}
         <Analytics />
       </body>

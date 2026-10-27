@@ -6,12 +6,15 @@ import { useEffect, useState } from 'react';
 import { ContactButton } from './ComponentsPhoto/ContactButton';
 import CustomCursor from './ComponentsPhoto/CustomCursor';
 
+const sections = [
+  { href: '/dev', label: 'Developer' },
+  { href: '/photo', label: 'Photographer' },
+];
+
 export default function Home() {
   const [colorChange, setColorChange] = useState(false);
 
   useEffect(() => {
-    let scrollTimeout: NodeJS.Timeout;
-
     const handleScroll = () => {
       if (!colorChange) {
         setColorChange(true);
@@ -19,14 +22,10 @@ export default function Home() {
           setColorChange(false);
         }, 500);
       }
-
-      clearTimeout(scrollTimeout);
-
-      scrollTimeout = setTimeout(() => {}, 100);
     };
 
-    window.addEventListener('wheel', handleScroll, { passive: false });
-    window.addEventListener('touchmove', handleScroll, { passive: false });
+    window.addEventListener('wheel', handleScroll, { passive: true });
+    window.addEventListener('touchmove', handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener('wheel', handleScroll);
@@ -35,34 +34,42 @@ export default function Home() {
   }, [colorChange]);
 
   return (
-    <main className="flex justify-center">
-      <div className="mx-auto mt-72 flex h-auto cursor-none flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
-        <CustomCursor />
-        <ContactButton link={'contact'} visible={true} />
+    <main className="flex min-h-[100svh] cursor-none flex-col bg-paper text-ink">
+      <CustomCursor />
+      <ContactButton link={'contact'} visible={true} />
+
+      <section className="bg-grid flex flex-1 flex-col justify-end overflow-hidden border-b-2 border-ink px-4 pb-4 pt-20">
         <Link className="cursor-none" href={'/'}>
-          <h1 className="text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>
+          <h1 className="font-wide text-[clamp(3.5rem,17.5vw,19rem)] font-black uppercase leading-none tracking-[-0.045em]">
+            Nils
+            <br />
+            Müller
+          </h1>
         </Link>
-        <div className="flex flex-col items-center">
-          <div className="my-7 flex cursor-none flex-col space-x-[69px] text-3xl font-bold tracking-wide sm:my-0 sm:flex-row sm:text-4xl">
-            <Link
-              className={`cursor-none md:transition-all md:duration-300 md:hover:blur-sm ${
-                colorChange ? 'text-[#ff0080] duration-100 md:animate-bounce' : 'text-black duration-100'
-              }`}
-              href={'/dev'}
-            >
-              Developer
-            </Link>
-            <Link
-              className={`cursor-none md:transition-all md:duration-300 md:hover:blur-sm ${
-                colorChange ? 'text-[#ff0080] duration-100 md:animate-bounce' : 'text-black duration-100'
-              }`}
-              href={'/photo'}
-            >
-              Photographer
-            </Link>
-          </div>
-        </div>
-      </div>
+      </section>
+
+      <nav className="grid grid-cols-1 sm:grid-cols-2">
+        {sections.map((section, index) => (
+          <Link
+            key={section.href}
+            href={section.href}
+            className={`group flex cursor-none flex-col justify-between gap-10 border-ink p-4 transition-colors duration-150 hover:bg-accent hover:text-paper ${
+              index === 0 ? 'border-b-2 sm:border-b-0 sm:border-r-2' : ''
+            }`}
+          >
+            <span className="font-mono text-xs uppercase">[0{index + 1}]</span>
+            <div className="flex items-end justify-between">
+              <span
+                className={`font-wide inline-block text-3xl font-black uppercase tracking-tight transition-transform duration-100 group-hover:text-paper sm:text-[4vw] xl:text-6xl ${
+                  colorChange ? '-skew-x-12 text-accent' : ''
+                }`}
+              >
+                {section.label}
+              </span>
+            </div>
+          </Link>
+        ))}
+      </nav>
     </main>
   );
 }
