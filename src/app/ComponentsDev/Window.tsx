@@ -30,7 +30,7 @@ export const Window = ({ children, onClose, onMinimize, isMinimized = false }: W
         isMinimized ? 'translate-y-[75vh] scale-50' : 'translate-y-0 scale-100'
       } mx-auto w-full max-w-4xl p-5`}
       style={{
-        height: isMinimized ? '25vh' : '100vh',
+        height: isMinimized ? '25vh' : 'auto',
       }}
       onClick={isMinimized ? onMinimize : undefined}
     >

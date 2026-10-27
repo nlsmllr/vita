@@ -143,7 +143,7 @@ export default function Photo() {
       ></div>
       <section className="fixed inset-0 z-10 flex h-screen items-center justify-center">
         <Link className="mx-auto flex cursor-none flex-col items-center justify-center uppercase" href={'/'}>
-          <h1 className="font-wide -mt-10 text-center text-[clamp(3rem,12vw,13rem)] font-black leading-[0.9] tracking-[-0.045em]">
+          <h1 className="font-wide -mt-10 text-center text-[clamp(3rem,12vw,13rem)] font-black leading-none tracking-[-0.045em]">
             Nils
             <br />
             Müller

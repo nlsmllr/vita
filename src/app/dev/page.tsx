@@ -23,7 +23,11 @@ export default function Home() {
   return (
     <div className="relative h-[85vh] cursor-auto overflow-hidden scroll-auto bg-paper text-ink sm:h-screen">
       <div className="bg-grid absolute inset-0 z-10 flex flex-col items-center justify-center text-center">
-        <h1 className="font-wide text-[clamp(3rem,14vw,12rem)] font-black uppercase leading-none tracking-[-0.045em]">
+        <h1
+          className={`font-wide text-[clamp(3rem,14vw,12rem)] font-black uppercase leading-none tracking-[-0.045em] ${
+            isVisible && !isMinimized ? 'invisible' : ''
+          }`}
+        >
           Oops.
         </h1>
         {!isVisible && (

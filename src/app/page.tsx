@@ -40,7 +40,7 @@ export default function Home() {
 
       <section className="bg-grid flex flex-1 flex-col justify-end overflow-hidden border-b-2 border-ink px-4 pb-4 pt-20">
         <Link className="cursor-none" href={'/'}>
-          <h1 className="font-wide text-[clamp(3.5rem,17.5vw,19rem)] font-black uppercase leading-[0.9] tracking-[-0.045em]">
+          <h1 className="font-wide text-[clamp(3.5rem,17.5vw,19rem)] font-black uppercase leading-none tracking-[-0.045em]">
             Nils
             <br />
             Müller

@@ -75,7 +75,7 @@ export const Terminal = () => {
 
   return (
     <div className="cursor-auto p-0 font-mono leading-5 text-paper">
-      <div className="scrollbar-hide h-[69vh] w-full overflow-y-auto p-4 font-mono sm:h-full">
+      <div className="scrollbar-hide h-[50vh] w-full overflow-y-auto p-4 font-mono">
         {commands.map((line, index) => (
           <pre key={index} className="whitespace-pre-wrap">
             {line === 'vita' ? <Content color="white" key={index} /> : line}
