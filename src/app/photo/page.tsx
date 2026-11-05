@@ -80,7 +80,7 @@ export default function Photo() {
   };
 
   return (
-    <div className="relative h-auto w-screen cursor-none bg-white pb-10 text-black">
+    <div className="relative h-auto w-full cursor-none overflow-x-hidden bg-canvas pb-24 text-ink">
       <CustomCursor />
 
       <ContactButton link={'contact'} visible={false} />
@@ -88,7 +88,7 @@ export default function Photo() {
       {/* --- Lightbox Overlay --- */}
       {lightboxImage && (
         <div
-          className="fixed inset-0 z-[100] flex touch-none items-center justify-center bg-black/85 p-4 sm:p-10"
+          className="fixed inset-0 z-[100] flex touch-none items-center justify-center bg-[#f3f1ec]/80 p-4 backdrop-blur-xl sm:p-10"
           onClick={() => setLightboxImage(null)}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
@@ -112,7 +112,7 @@ export default function Photo() {
                     width={2500}
                     height={2500}
                     priority={isActive}
-                    className="max-h-full max-w-full select-none object-contain"
+                    className="max-h-full w-auto max-w-full select-none rounded-[1.75rem] object-contain shadow-[0_24px_60px_-20px_rgba(24,24,27,0.45)]"
                     draggable={false}
                     // Only clicking the actual photo pixels prevents it from closing
                     onClick={e => e.stopPropagation()}
@@ -126,21 +126,33 @@ export default function Photo() {
       {/* ------------------------ */}
 
       <div className="flex h-[75vh] w-screen items-end justify-center">
-        <div className="text-md z-10 font-light uppercase tracking-widest text-zinc-950">scroll down</div>
+        <div className="chip z-20 mb-6 animate-bounce">
+          <svg
+            viewBox="0 0 16 16"
+            className="h-3.5 w-3.5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            aria-hidden
+          >
+            <path d="M4 6l4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          Scroll
+        </div>
       </div>
       <div
         className="fixed left-0 top-0 z-10 h-[74vh] w-full"
         style={{
-          backgroundImage: 'linear-gradient(to bottom, white, white 74%, transparent 100%)',
+          backgroundImage: 'linear-gradient(to bottom, var(--canvas), var(--canvas) 74%, transparent 100%)',
         }}
       ></div>
       <section className="fixed inset-0 z-10 flex h-screen items-center justify-center">
-        <Link className="mx-auto flex cursor-none flex-col items-center justify-center uppercase text-black" href={'/'}>
-          <h1 className="-mt-10 text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>
+        <Link className="mx-auto flex cursor-none flex-col items-center justify-center" href={'/'}>
+          <h1 className="display -mt-10 text-center">Nils Müller</h1>
         </Link>
       </section>
       <section className="relative z-20 mt-[700px] cursor-none pb-[0px] sm:mx-40">
-        <div className="grid grid-cols-1 gap-4 px-12 sm:p-4 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 px-12 sm:p-4 md:grid-cols-4">
           {imageFilenames.map((filename, index) => (
             <div
               key={index}
@@ -157,16 +169,16 @@ export default function Photo() {
                 alt={`Image ${index + 1}`}
                 width={2500}
                 height={2500}
-                className="w-full object-cover transition md:duration-200"
+                className="block w-full rounded-[1.75rem] object-cover shadow-[0_1px_2px_rgba(24,24,27,.08),0_18px_40px_-16px_rgba(24,24,27,.4)] transition duration-300 md:hover:-translate-y-1"
                 aria-label={`Photography work ${index + 1}`}
                 tabIndex={0}
                 onKeyDown={e => {
                   if (e.key === 'Enter') setLightboxImage(filename);
                 }}
               />
-              <p className="absolute -right-8 top-0 text-xl text-[#ff0080] contrast-more:text-[#883860]">
+              <span className="chip chip-accent absolute right-4 top-4 tabular-nums">
                 {String(index + 1).padStart(2, '0')}
-              </p>
+              </span>
             </div>
           ))}
         </div>
