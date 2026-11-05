@@ -22,14 +22,12 @@ export default function Home() {
 
   return (
     <div className="relative h-[85vh] cursor-auto overflow-hidden scroll-auto sm:h-screen">
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center font-bold text-zinc-800">
-        <h1 className="text-5xl">Oops!</h1>
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-8 text-center">
+        <h1 className="display">Oops!</h1>
         {!isVisible && (
-          <>
-            <button onClick={handleOpen} className="mt-5 rounded-lg bg-zinc-200 p-3 px-5 text-xl hover:shadow-lg">
-              Hey, come back here!
-            </button>
-          </>
+          <button onClick={handleOpen} className="btn btn-primary">
+            Hey, come back here!
+          </button>
         )}
       </div>
       {isVisible && (

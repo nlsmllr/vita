@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { Content } from '../ComponentsDev/Content';
+import { Vitae } from '../ComponentsDev/Vitae';
 import CustomCursor from '../ComponentsPhoto/CustomCursor';
 
 const page = () => {
   return (
-    <div className="flex h-full w-screen cursor-none justify-center">
+    <main className="flex min-h-screen w-full cursor-none justify-center px-4 py-12 sm:py-20">
       <CustomCursor />
-      <div className="mb-20 w-4/5 cursor-none sm:w-1/2">
-        <Content color="black" />
+      <div className="w-full max-w-3xl">
+        <Vitae />
       </div>
-    </div>
+    </main>
   );
 };
 

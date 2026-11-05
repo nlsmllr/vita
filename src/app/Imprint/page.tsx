@@ -1,47 +1,24 @@
-'use client';
+import Link from 'next/link';
 
-import React, { useState } from 'react';
-
-import { Imprint } from '../ComponentsDev/Imprint';
-import { Window } from '../ComponentsDev/Window';
-
-export default function Home() {
-  const [isVisible, setIsVisible] = useState(true);
-  const [isMinimized, setIsMinimized] = useState(false);
-
-  const handleClose = () => {
-    setIsVisible(false);
-  };
-  const handleOpen = () => {
-    setIsVisible(true);
-  };
-
-  const handleMinimize = () => {
-    setIsMinimized(!isMinimized);
-  };
-
+export default function Imprint() {
   return (
-    <div className="relative h-screen cursor-auto">
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center font-bold text-zinc-800">
-        <h1 className="text-5xl">Oops!</h1>
-        {!isVisible && (
-          <>
-            <button onClick={handleOpen} className="mt-5 rounded-lg bg-zinc-200 p-3 px-5 text-xl hover:shadow-lg">
-              Hey, come back here!
-            </button>
-            {/* <button onClick={handleOpen} className="mt-5 rounded-lg bg-zinc-200 p-3 px-5 text-xl hover:shadow-lg">
-              Take me Home!
-            </button> */}
-          </>
-        )}
-      </div>
-      {isVisible && (
-        <div className="absolute z-20 flex h-full w-full items-start justify-center">
-          <Window onClose={handleClose} onMinimize={handleMinimize} isMinimized={isMinimized}>
-            <Imprint />
-          </Window>
-        </div>
-      )}
-    </div>
+    <main className="flex min-h-screen cursor-auto items-center justify-center px-4 py-12">
+      <section className="clay-stack w-full max-w-lg p-8 sm:p-10">
+        <h1 className="text-4xl font-semibold tracking-tight">Imprint</h1>
+        <address className="mt-6 flex flex-col gap-1.5 text-lg not-italic text-zinc-700">
+          <span>Nils Müller</span>
+          <span>Pastorenstraße 18, 20459 Hamburg</span>
+          <a href="mailto:info@nils-mueller.com" className="link-soft self-start">
+            info@nils-mueller.com
+          </a>
+          <a href="tel:+4915115776494" className="link-soft self-start">
+            +49 151 15776494
+          </a>
+        </address>
+        <Link href="/" className="btn btn-sm mt-8">
+          Back
+        </Link>
+      </section>
+    </main>
   );
 }

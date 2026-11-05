@@ -7,61 +7,42 @@ import { ContactButton } from './ComponentsPhoto/ContactButton';
 import CustomCursor from './ComponentsPhoto/CustomCursor';
 
 export default function Home() {
-  const [colorChange, setColorChange] = useState(false);
+  const [nudge, setNudge] = useState(false);
 
   useEffect(() => {
-    let scrollTimeout: NodeJS.Timeout;
-
     const handleScroll = () => {
-      if (!colorChange) {
-        setColorChange(true);
-        setTimeout(() => {
-          setColorChange(false);
-        }, 500);
+      if (!nudge) {
+        setNudge(true);
+        setTimeout(() => setNudge(false), 500);
       }
-
-      clearTimeout(scrollTimeout);
-
-      scrollTimeout = setTimeout(() => {}, 100);
     };
 
-    window.addEventListener('wheel', handleScroll, { passive: false });
-    window.addEventListener('touchmove', handleScroll, { passive: false });
+    window.addEventListener('wheel', handleScroll, { passive: true });
+    window.addEventListener('touchmove', handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener('wheel', handleScroll);
       window.removeEventListener('touchmove', handleScroll);
     };
-  }, [colorChange]);
+  }, [nudge]);
 
   return (
-    <main className="flex justify-center">
-      <div className="mx-auto mt-72 flex h-auto cursor-none flex-col items-center justify-center uppercase text-black sm:mt-0 sm:h-screen sm:justify-evenly">
-        <CustomCursor />
-        <ContactButton link={'contact'} visible={true} />
-        <Link className="cursor-none" href={'/'}>
-          <h1 className="text-center text-5xl font-black tracking-wide sm:text-9xl">Nils Müller</h1>
+    <main className="flex min-h-screen cursor-none flex-col items-center justify-center gap-14 px-4">
+      <CustomCursor />
+      <ContactButton link={'contact'} visible={true} />
+      <Link className="cursor-none" href={'/'}>
+        <h1 className="display text-center">Nils Müller</h1>
+      </Link>
+      <div className="flex flex-col items-center gap-5 sm:flex-row">
+        <Link
+          className={`btn btn-primary min-w-[220px] cursor-none ${nudge ? 'btn-glow md:animate-bounce' : ''}`}
+          href={'/dev'}
+        >
+          Developer
         </Link>
-        <div className="flex flex-col items-center">
-          <div className="my-7 flex cursor-none flex-col space-x-[69px] text-3xl font-bold tracking-wide sm:my-0 sm:flex-row sm:text-4xl">
-            <Link
-              className={`cursor-none md:transition-all md:duration-300 md:hover:blur-sm ${
-                colorChange ? 'text-[#ff0080] duration-100 md:animate-bounce' : 'text-black duration-100'
-              }`}
-              href={'/dev'}
-            >
-              Developer
-            </Link>
-            <Link
-              className={`cursor-none md:transition-all md:duration-300 md:hover:blur-sm ${
-                colorChange ? 'text-[#ff0080] duration-100 md:animate-bounce' : 'text-black duration-100'
-              }`}
-              href={'/photo'}
-            >
-              Photographer
-            </Link>
-          </div>
-        </div>
+        <Link className={`btn min-w-[220px] cursor-none ${nudge ? 'btn-glow md:animate-bounce' : ''}`} href={'/photo'}>
+          Photographer
+        </Link>
       </div>
     </main>
   );
